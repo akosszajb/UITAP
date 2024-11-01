@@ -1,7 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-
 namespace UITAP_tests;
 
 public class Navbar
