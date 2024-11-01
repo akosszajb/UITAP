@@ -17,7 +17,7 @@ public class Navbar
 
     private IWebElement NavbarToggler => _driver.FindElement(By.ClassName("navbar-toggler-icon"));
     
-    private Navbar(IWebDriver driver, WebDriverWait wait)
+    public Navbar(IWebDriver driver, WebDriverWait wait)
     {
         _driver = driver;
         _wait = wait;
