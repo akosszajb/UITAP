@@ -23,25 +23,31 @@ public class NavbarTests
         _mainPage = new MainPage(_driver, _wait);
         _mainPage.LoadMainPage();
     }
+    
+    [TearDown]
+    public void Teardown()
+    {
+        _driver.Quit();
+    }
 
     [Test]
     public void NavbarTest1_UITAPLogoTest()
     {
-        _mainPage.OpenDynamicIDPage();
+        _mainPage.OpenDynamicIdPage();
         _navbar.UITAPLogoClick();
         
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
-        Assert.IsTrue(title.Displayed, "UI Test Automation Playground");
+        Assert.IsTrue(title.Displayed, "UI Test Automation Playground title is not displayed");
     }
     
     [Test]
     public void NavbarTest2_HomeButtonTest()
     {
-        _mainPage.OpenDynamicIDPage();
+        _mainPage.OpenDynamicIdPage();
         _navbar.HomeButtonClick();
         
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
-        Assert.IsTrue(title.Displayed, "UI Test Automation Playground");
+        Assert.IsTrue(title.Displayed, "UI Test Automation Playground title is not displayed");
     }
 
     [Test]
@@ -50,24 +56,19 @@ public class NavbarTests
         _navbar.ResourcesButtonClick();
         
         var w3schoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
-        Assert.IsTrue(w3schoolsLink.Displayed, "w3schools.com");
+        Assert.IsTrue(w3schoolsLink.Displayed, "w3schools.com link is not displayed");
     }
 
     [Test]
     public void NavbarTest3_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
-        _mainPage.OpenDynamicIDPage();
+        Thread.Sleep(3000);
         _navbar.OpenNavbarWithNavbarToggler();
         _navbar.HomeButtonClick();
         
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
-        Assert.IsTrue(title.Displayed, "UI Test Automation Playground");
+        Assert.IsTrue(title.Displayed, "UI Test Automation Playground title is not displayed");
     }
-
-    [TearDown]
-    public void Teardown()
-    {
-        _driver.Quit();
-    }
+    
 }

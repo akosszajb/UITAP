@@ -9,7 +9,7 @@ public class Navbar
     
     private readonly WebDriverWait _wait;
 
-    private IWebElement UITAPLogo => _driver.FindElement(By.CssSelector("a.nav-link[href='/']"));
+    private IWebElement UITAPLogo => _driver.FindElement(By.CssSelector("a.navbar-brand"));
 
     private IWebElement HomeButton => _driver.FindElement(By.CssSelector("a.nav-link"));
     
