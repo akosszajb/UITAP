@@ -27,7 +27,6 @@ public class ResourcesPageTests
         _resourcesPage = new ResourcesPage(_driver, _wait);
         _mainPage.LoadMainPage();
         _navbar.ResourcesButtonClick();
-        Thread.Sleep(1000);
     }
     
     [TearDown]

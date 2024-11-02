@@ -29,7 +29,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest0_AllDescriptionIsVisible()
+    public void MainPageTest0_AllDescriptionsAreVisible()
     { 
         ((IJavaScriptExecutor)_driver).ExecuteScript("document.body.style.zoom='30%'");
     var Title = _wait.Until(driver => driver.FindElement(By.Id("title")));
