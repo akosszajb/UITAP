@@ -35,20 +35,14 @@ public class MainPage
     private IWebElement AnimatedButtonLink => _driver.FindElement(By.CssSelector("a[href='/animation']"));
     private IWebElement DisabledInputLink => _driver.FindElement(By.CssSelector("a[href='/disabledinput']"));
     private IWebElement AutoWaitLink => _driver.FindElement(By.CssSelector("a[href='/autowait']"));
-    private IWebElement GithubLink=> _driver.FindElement(By.CssSelector("a[href='https://github.com/inflectra/ui-test-automation-playground']"));
-   
-    private IWebElement RapiseLink => _driver.FindElement(By.CssSelector("a[href='https://www.inflectra.com/Rapise/']"));
-    private IWebElement InflectraCorporationLink => _driver.FindElement(By.CssSelector("a[href='https://www.inflectra.com/']"));
     
-    private IWebElement ApacheLicenseLink => _driver.FindElement(By.CssSelector("a[href='https://www.apache.org/licenses/LICENSE-2.0']"));
-    
-    //Methods
     public MainPage(IWebDriver driver, WebDriverWait wait)
     {
         _driver = driver;
         _wait = wait;
     }
     
+    //Methods
     public void LoadMainPage()
     {
         _driver.Navigate().GoToUrl("http://localhost:3000/");
@@ -177,25 +171,5 @@ public class MainPage
     public void OpenAutoWaitPage()
     {
         AutoWaitLink.Click();
-    }
-    
-    public void OpenGithubRepoByLink()
-    {
-        GithubLink.Click();
-    }
-
-    public void OpenRapisePage()
-    {
-        RapiseLink.Click();
-    }
-
-    public void OpenInflectraPage()
-    {
-        InflectraCorporationLink.Click();
-    }
-
-    public void OpenApacheLicense()
-    {
-        ApacheLicenseLink.Click();
     }
 }

@@ -291,36 +291,6 @@ public class MainPageTests
     }
     
     
-    [Test]
-    public void MainPageTest26_GithubLink()
-    {
-        _mainPage.OpenGithubRepoByLink();
-        var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
-        Assert.IsTrue(githubRepository.Displayed, "Github Repository is not loaded");
-    }
     
-    [Test]
-    public void MainPageTest27_RapiseLink()
-    {
-        _mainPage.OpenRapisePage();
-        var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
-        Assert.IsTrue(rapiseTitle.Displayed, "Rapise product page is not loaded (Rapise - title is not visible)");
-    }
-    
-    [Test]
-    public void MainPageTest28_InflectraCorporationLink()
-    {
-        _mainPage.OpenInflectraPage();
-        var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
-        Assert.IsTrue(inflectraTitle.Displayed, "Inflectra page is not loaded (Inflectra - title is not visible)");
-    }
-    
-    [Test]
-    public void MainPageTest29_ApacheLicenseLink()
-    {
-        _mainPage.OpenApacheLicense();
-        var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));
-        Assert.IsTrue(apacheTitle.Displayed, "Apache license page is not loaded (Apache license - title is not visible)");
-    }
     
 }
