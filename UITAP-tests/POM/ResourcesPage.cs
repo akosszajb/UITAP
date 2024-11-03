@@ -31,7 +31,7 @@ public class ResourcesPage
         _wait = wait;
     }
     
-    public void OpenW3schoolsLink()
+    public void OpenW3SchoolsLink()
     {
         W3SchoolsLink.Click();
     }

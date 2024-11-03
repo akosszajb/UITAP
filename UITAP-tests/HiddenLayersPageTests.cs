@@ -38,19 +38,19 @@ public class HiddenLayersPageTests
     [Test]
     public void HiddenLayersPageTest0_AllTextsAreVisible()
     {
-        var Title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Hidden Layers')]")));
-        var Description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Some applications use DOM caching')]")));
-        var ScenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
-        var ScenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Record button click and then duplicate')]")));
-        var ScenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Execute the test to make sure that green')]")));
-        var Playground = _wait.Until(driver => driver.FindElement(By.XPath("//h4[contains(text(),'Playground')]")));
+        var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Hidden Layers')]")));
+        var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Some applications use DOM caching')]")));
+        var scenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
+        var scenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Record button click and then duplicate')]")));
+        var scenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Execute the test to make sure that green')]")));
+        var playground = _wait.Until(driver => driver.FindElement(By.XPath("//h4[contains(text(),'Playground')]")));
     
-        Assert.IsTrue(Title.Displayed, "Class Attribute page is not loaded properly (Title is not visible)");
-        Assert.IsTrue(Description1.Displayed, "Class Attribute page is not loaded properly (Description1 is not visible)");
-        Assert.IsTrue(ScenarioList.Displayed, "Class Attribute page is not loaded properly (ScenarioList is not visible)");
-        Assert.IsTrue(ScenarioListElement1.Displayed, "Class Attribute page is not loaded properly (ScenarioListElement1 is not visible)");
-        Assert.IsTrue(ScenarioListElement2.Displayed, "Class Attribute page is not loaded properly (ScenarioListElement2 is not visible)");
-        Assert.IsTrue(Playground.Displayed, "Class Attribute page is not loaded properly (Playground is not visible)");
+        Assert.IsTrue(title.Displayed, "Class Attribute page is not loaded properly (Title is not visible)");
+        Assert.IsTrue(description1.Displayed, "Class Attribute page is not loaded properly (Description1 is not visible)");
+        Assert.IsTrue(scenarioList.Displayed, "Class Attribute page is not loaded properly (ScenarioList is not visible)");
+        Assert.IsTrue(scenarioListElement1.Displayed, "Class Attribute page is not loaded properly (ScenarioListElement1 is not visible)");
+        Assert.IsTrue(scenarioListElement2.Displayed, "Class Attribute page is not loaded properly (ScenarioListElement2 is not visible)");
+        Assert.IsTrue(playground.Displayed, "Class Attribute page is not loaded properly (Playground is not visible)");
     }
     
     [Test]
@@ -64,17 +64,17 @@ public class HiddenLayersPageTests
     public void HiddenLayersPageTest2_ClickOnGreenButtonToSeeBlueButton()
     {
         _hiddenLayersPage.GreenButtonClicker();
-        var BlueButton = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-primary")));
+        var blueButton = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-primary")));
 
-        Assert.IsTrue(BlueButton.Enabled, "After clicking on the green button, the blue button should be enabled!");
+        Assert.IsTrue(blueButton.Enabled, "After clicking on the green button, the blue button should be enabled!");
     
     }
     
     [Test]
     public void HiddenLayersPageTest3_CheckBlueButtonIsAvailableBeforeGreen()
     {
-        var GreenButton = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-success")));
-        Assert.IsTrue(GreenButton.Enabled, "Before clicking on the green button, the blue button should not be enabled!");
+        var greenButton = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-success")));
+        Assert.IsTrue(greenButton.Enabled, "Before clicking on the green button, the blue button should not be enabled!");
     }
     
     [Test]
@@ -97,8 +97,8 @@ public class HiddenLayersPageTests
     public void HiddenLayersPageTest6_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
-        var w3schoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
-        Assert.IsTrue(w3schoolsLink.Displayed, "w3schools.com link is not displayed");
+        var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
+        Assert.IsTrue(w3SchoolsLink.Displayed, "w3schools.com link is not displayed");
     }
 
     [Test]

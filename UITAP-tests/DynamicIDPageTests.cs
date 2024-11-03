@@ -38,19 +38,19 @@ public class DynamicIDPageTests
     [Test]
     public void DynamicIDPageTest0_AllTextsAreVisible()
     { 
-    var Title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Dynamic ID')]")));
-    var Description = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Modern applications often')]")));
-    var ScenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
-    var ScenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Record button')]")));
-    var ScenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Then execute your test')]")));
-    var Playground = _wait.Until(driver => driver.FindElement(By.XPath("//h4[contains(text(),'Playground')]")));
+    var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Dynamic ID')]")));
+    var description = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Modern applications often')]")));
+    var scenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
+    var scenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Record button')]")));
+    var scenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Then execute your test')]")));
+    var playground = _wait.Until(driver => driver.FindElement(By.XPath("//h4[contains(text(),'Playground')]")));
     
-    Assert.IsTrue(Title.Displayed, "Dynamic ID is not loaded properly (Title is not visible)");
-    Assert.IsTrue(Description.Displayed, "Dynamic ID is not loaded properly (Description is not visible)");
-    Assert.IsTrue(ScenarioList.Displayed, "Dynamic ID is not loaded properly (ScenarioList is not visible)");
-    Assert.IsTrue(ScenarioListElement1.Displayed, "Dynamic ID is not loaded properly (ScenarioListElement1 is not visible)");
-    Assert.IsTrue(ScenarioListElement2.Displayed, "Dynamic ID is not loaded properly (ScenarioListElement2 is not visible)");
-    Assert.IsTrue(Playground.Displayed, "Dynamic ID is not loaded properly (Playground is not visible)");
+    Assert.IsTrue(title.Displayed, "Dynamic ID is not loaded properly (Title is not visible)");
+    Assert.IsTrue(description.Displayed, "Dynamic ID is not loaded properly (Description is not visible)");
+    Assert.IsTrue(scenarioList.Displayed, "Dynamic ID is not loaded properly (ScenarioList is not visible)");
+    Assert.IsTrue(scenarioListElement1.Displayed, "Dynamic ID is not loaded properly (ScenarioListElement1 is not visible)");
+    Assert.IsTrue(scenarioListElement2.Displayed, "Dynamic ID is not loaded properly (ScenarioListElement2 is not visible)");
+    Assert.IsTrue(playground.Displayed, "Dynamic ID is not loaded properly (Playground is not visible)");
     
     }
     
@@ -91,8 +91,8 @@ public class DynamicIDPageTests
     {
         _navbar.ResourcesButtonClick();
         
-        var w3schoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
-        Assert.IsTrue(w3schoolsLink.Displayed, "w3schools.com link is not displayed");
+        var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
+        Assert.IsTrue(w3SchoolsLink.Displayed, "w3schools.com link is not displayed");
     }
 
     [Test]

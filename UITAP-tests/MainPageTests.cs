@@ -32,61 +32,61 @@ public class MainPageTests
     public void MainPageTest0_AllDescriptionsAreVisible()
     { 
         ((IJavaScriptExecutor)_driver).ExecuteScript("document.body.style.zoom='30%'");
-    var Title = _wait.Until(driver => driver.FindElement(By.Id("title")));
-    var QuoteFromAristotle = _wait.Until(driver => driver.FindElement(By.Id("citation")));
-    var WarningMessage = _wait.Until(driver=> driver.FindElement(By.ClassName("alert-warning")));
-    var Description = _wait.Until(driver => driver.FindElement(By.XPath("//p[text()='Different automation pitfalls appearing in modern web applications are described and emulated below.']")));
-    var DynamicIdDescription = _wait.Until(driver => driver.FindElement(By.XPath("//p[text()='Make sure you are not recording dynamic IDs of elements']")));
-    var ClassAttributeDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Check that class attribute based XPath is well formed']")));
-    var HiddenLayersDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Verify that your test does not interact with elements invisible because of z-order']")));
-    var LoadDelayDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Ensure that a test is capable of waiting for a page to load']")));
-    var AJAXDataDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Some elements may appear on a page after loading data with AJAX request']")));
-    var ClientSideDelayDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Some elements may appear after client-side time consuming JavaScript calculations']")));
-    var ClickDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Event based click')]")));
-    var TextInputDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Entering text into an edit field may not have effect']")));
-    var ScrollbarsDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Scrolling an element into view may be a tricky task']")));
-    var DynamicTableDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Verify cell value in a dynamic table')]")));
-    var VerifyTextDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Finding an element by displayed text has nuances']")));
-    var ProgressBarDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Follow the progress of a lengthy process')]")));
-    var VisibilityDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Check if element is visible on screen')]")));
-    var SampleAppDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Demo application with dynamically generated element attributes']")));
-    var MouseOverDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Placing mouse over an element may change DOM and make the element unavailable']")));
-    var NonBreakingSpaceDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Non-breaking space looks like a normal one on screen. It may lead to confusion when building XPath']")));
-    var OverlappedElementDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Make element visible to enter text')]")));
-    var ShadowDOMDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Look inside Shadow DOM component')]")));
-    var AlertsDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Accept alerts, confirmations and prompts')]")));
-    var FileUploadDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Upload files')]")));
-    var AnimatedButtonDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Wait for animation to stop before clicking a button')]")));
-    var DisabledInputDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Wait for edit field to become enabled')]")));
-    var AutoWaitDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Wait for an element to become interactable')]")));
+    var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
+    var quoteFromAristotle = _wait.Until(driver => driver.FindElement(By.Id("citation")));
+    var warningMessage = _wait.Until(driver=> driver.FindElement(By.ClassName("alert-warning")));
+    var description = _wait.Until(driver => driver.FindElement(By.XPath("//p[text()='Different automation pitfalls appearing in modern web applications are described and emulated below.']")));
+    var dynamicIdDescription = _wait.Until(driver => driver.FindElement(By.XPath("//p[text()='Make sure you are not recording dynamic IDs of elements']")));
+    var classAttributeDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Check that class attribute based XPath is well formed']")));
+    var hiddenLayersDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Verify that your test does not interact with elements invisible because of z-order']")));
+    var loadDelayDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Ensure that a test is capable of waiting for a page to load']")));
+    var ajaxDataDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Some elements may appear on a page after loading data with AJAX request']")));
+    var clientSideDelayDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Some elements may appear after client-side time consuming JavaScript calculations']")));
+    var clickDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Event based click')]")));
+    var textInputDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Entering text into an edit field may not have effect']")));
+    var scrollbarsDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Scrolling an element into view may be a tricky task']")));
+    var dynamicTableDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Verify cell value in a dynamic table')]")));
+    var verifyTextDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Finding an element by displayed text has nuances']")));
+    var progressBarDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Follow the progress of a lengthy process')]")));
+    var visibilityDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Check if element is visible on screen')]")));
+    var sampleAppDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Demo application with dynamically generated element attributes']")));
+    var mouseOverDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Placing mouse over an element may change DOM and make the element unavailable']")));
+    var nonBreakingSpaceDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[text()='Non-breaking space looks like a normal one on screen. It may lead to confusion when building XPath']")));
+    var overlappedElementDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Make element visible to enter text')]")));
+    var shadowDOMDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Look inside Shadow DOM component')]")));
+    var alertsDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Accept alerts, confirmations and prompts')]")));
+    var fileUploadDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Upload files')]")));
+    var animatedButtonDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Wait for animation to stop before clicking a button')]")));
+    var disabledInputDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Wait for edit field to become enabled')]")));
+    var autoWaitDescription = _wait.Until(driver=> driver.FindElement(By.XPath("//p[contains(text(), 'Wait for an element to become interactable')]")));
     
-    Assert.IsTrue(Title.Displayed, "Main Page is not loaded (Title is not visible)");
-    Assert.IsTrue(QuoteFromAristotle.Displayed, "Main Page is not loaded (QuoteFromAristotle is not visible)");
-    Assert.IsTrue(WarningMessage.Displayed, "Main Page is not loaded (WarningMessage is not visible)");
-    Assert.IsTrue(Description.Displayed, "Main Page is not loaded (Description is not visible)");
-    Assert.IsTrue(DynamicIdDescription.Displayed, "Main Page is not loaded (DynamicIdDescription is not visible)");
-    Assert.IsTrue(ClassAttributeDescription.Displayed, "Main Page is not loaded (ClassAttributeDescription is not visible)");
-    Assert.IsTrue(HiddenLayersDescription.Displayed, "Main Page is not loaded (HiddenLayersDescription is not visible)");
-    Assert.IsTrue(LoadDelayDescription.Displayed, "Main Page is not loaded (LoadDelayDescription is not visible)");
-    Assert.IsTrue(AJAXDataDescription.Displayed, "Main Page is not loaded (AJAXDataDescription is not visible)");
-    Assert.IsTrue(ClientSideDelayDescription.Displayed, "Main Page is not loaded (ClientSideDelayDescription is not visible)");
-    Assert.IsTrue(ClickDescription.Displayed, "Main Page is not loaded (ClickDescription is not visible)");
-    Assert.IsTrue(TextInputDescription.Displayed, "Main Page is not loaded (TextInputDescription is not visible)");
-    Assert.IsTrue(ScrollbarsDescription.Displayed, "Main Page is not loaded (ScrollbarsDescription is not visible)");
-    Assert.IsTrue(DynamicTableDescription.Displayed, "Main Page is not loaded (DynamicTableDescription is not visible)");
-    Assert.IsTrue(VerifyTextDescription.Displayed, "Main Page is not loaded (VerifyTextDescription is not visible)");
-    Assert.IsTrue(ProgressBarDescription.Displayed, "Main Page is not loaded (ProgressBarDescription is not visible)");
-    Assert.IsTrue(VisibilityDescription.Displayed, "Main Page is not loaded (VisibilityDescription is not visible)");
-    Assert.IsTrue(SampleAppDescription.Displayed, "Main Page is not loaded (SampleAppDescription is not visible)");
-    Assert.IsTrue(MouseOverDescription.Displayed, "Main Page is not loaded MouseOverDescription is not visible)");
-    Assert.IsTrue(NonBreakingSpaceDescription.Displayed, "Main Page is not loaded (NonBreakingSpaceDescription is not visible)");
-    Assert.IsTrue(OverlappedElementDescription.Displayed, "Main Page is not loaded (OverlappedElementDescription is not visible)");
-    Assert.IsTrue(ShadowDOMDescription.Displayed, "Main Page is not loaded (ShadowDOMDescription is not visible)");
-    Assert.IsTrue(AlertsDescription.Displayed, "Main Page is not loaded (AlertsDescription is not visible)");
-    Assert.IsTrue(FileUploadDescription.Displayed, "Main Page is not loaded (FileUploadDescription is not visible)");
-    Assert.IsTrue(AnimatedButtonDescription.Displayed, "Main Page is not loaded (AnimatedButtonDescription is not visible)");
-    Assert.IsTrue(DisabledInputDescription.Displayed, "Main Page is not loaded (DisabledInputDescription is not visible)");
-    Assert.IsTrue(AutoWaitDescription.Displayed, "Main Page is not loaded (AutoWaitDescription - title is not visible)");
+    Assert.IsTrue(title.Displayed, "Main Page is not loaded (Title is not visible)");
+    Assert.IsTrue(quoteFromAristotle.Displayed, "Main Page is not loaded (QuoteFromAristotle is not visible)");
+    Assert.IsTrue(warningMessage.Displayed, "Main Page is not loaded (WarningMessage is not visible)");
+    Assert.IsTrue(description.Displayed, "Main Page is not loaded (Description is not visible)");
+    Assert.IsTrue(dynamicIdDescription.Displayed, "Main Page is not loaded (DynamicIdDescription is not visible)");
+    Assert.IsTrue(classAttributeDescription.Displayed, "Main Page is not loaded (ClassAttributeDescription is not visible)");
+    Assert.IsTrue(hiddenLayersDescription.Displayed, "Main Page is not loaded (HiddenLayersDescription is not visible)");
+    Assert.IsTrue(loadDelayDescription.Displayed, "Main Page is not loaded (LoadDelayDescription is not visible)");
+    Assert.IsTrue(ajaxDataDescription.Displayed, "Main Page is not loaded (AJAXDataDescription is not visible)");
+    Assert.IsTrue(clientSideDelayDescription.Displayed, "Main Page is not loaded (ClientSideDelayDescription is not visible)");
+    Assert.IsTrue(clickDescription.Displayed, "Main Page is not loaded (ClickDescription is not visible)");
+    Assert.IsTrue(textInputDescription.Displayed, "Main Page is not loaded (TextInputDescription is not visible)");
+    Assert.IsTrue(scrollbarsDescription.Displayed, "Main Page is not loaded (ScrollbarsDescription is not visible)");
+    Assert.IsTrue(dynamicTableDescription.Displayed, "Main Page is not loaded (DynamicTableDescription is not visible)");
+    Assert.IsTrue(verifyTextDescription.Displayed, "Main Page is not loaded (VerifyTextDescription is not visible)");
+    Assert.IsTrue(progressBarDescription.Displayed, "Main Page is not loaded (ProgressBarDescription is not visible)");
+    Assert.IsTrue(visibilityDescription.Displayed, "Main Page is not loaded (VisibilityDescription is not visible)");
+    Assert.IsTrue(sampleAppDescription.Displayed, "Main Page is not loaded (SampleAppDescription is not visible)");
+    Assert.IsTrue(mouseOverDescription.Displayed, "Main Page is not loaded MouseOverDescription is not visible)");
+    Assert.IsTrue(nonBreakingSpaceDescription.Displayed, "Main Page is not loaded (NonBreakingSpaceDescription is not visible)");
+    Assert.IsTrue(overlappedElementDescription.Displayed, "Main Page is not loaded (OverlappedElementDescription is not visible)");
+    Assert.IsTrue(shadowDOMDescription.Displayed, "Main Page is not loaded (ShadowDOMDescription is not visible)");
+    Assert.IsTrue(alertsDescription.Displayed, "Main Page is not loaded (AlertsDescription is not visible)");
+    Assert.IsTrue(fileUploadDescription.Displayed, "Main Page is not loaded (FileUploadDescription is not visible)");
+    Assert.IsTrue(animatedButtonDescription.Displayed, "Main Page is not loaded (AnimatedButtonDescription is not visible)");
+    Assert.IsTrue(disabledInputDescription.Displayed, "Main Page is not loaded (DisabledInputDescription is not visible)");
+    Assert.IsTrue(autoWaitDescription.Displayed, "Main Page is not loaded (AutoWaitDescription - title is not visible)");
     }
 
     [Test]
@@ -142,8 +142,8 @@ public class MainPageTests
     public void MainPageTest7_AJAXDataLink()
     {
         _mainPage.OpenAJAXDataPage();
-        var AJAXDataTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'AJAX Data')]")));
-        Assert.IsTrue(AJAXDataTitle.Displayed, "AJAX Data page is not loaded (AJAX Data - title is not visible)");
+        var ajaxDataTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'AJAX Data')]")));
+        Assert.IsTrue(ajaxDataTitle.Displayed, "AJAX Data page is not loaded (AJAX Data - title is not visible)");
     }
     
     [Test]

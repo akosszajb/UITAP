@@ -4,14 +4,15 @@ using OpenQA.Selenium.Support.UI;
 
 namespace UITAP_tests;
 
-public class ClassAttributePageTests
+public class LoadDelaysTests
 {
     private IWebDriver _driver;
     private WebDriverWait _wait;
     private MainPage _mainPage;
     private Navbar _navbar;
     private Footer _footer;
-    private ClassAttributePage _classAttributePage;
+    private LoadDelayPage _loadDelayPage;
+    
 
     [SetUp]
     public void Setup()
@@ -24,9 +25,7 @@ public class ClassAttributePageTests
         _mainPage = new MainPage(_driver, _wait);
         _navbar = new Navbar(_driver, _wait);
         _footer = new Footer(_driver, _wait);
-        _classAttributePage = new ClassAttributePage(_driver, _wait);
-        _mainPage.LoadMainPage();
-        _mainPage.OpenClassAttributePage();
+        _loadDelayPage = new LoadDelayPage(_driver, _wait);
     }
     
     [TearDown]
@@ -36,80 +35,80 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest0_AllTextsAreVisible()
+    public void LoadDelayPageTest0_AllTextsAreVisible()
     {
-        var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Class Attribute')]")));
-        var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Class attribute of an element')]")));
-        var description2 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'XPath selector relying')]")));
-        var description3 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Correct variant')]")));
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
+        var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Load Delays')]")));
+        var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Server response may often')]")));
         var scenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
-        var scenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Record primary (blue)')]")));
-        var scenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Then execute your test to make sure')]")));
+        var scenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Navigate to Home page')]")));
+        var scenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Then play the test. It')]")));
         var playground = _wait.Until(driver => driver.FindElement(By.XPath("//h4[contains(text(),'Playground')]")));
     
-        Assert.IsTrue(title.Displayed, "Class Attribute page is not loaded properly (Title is not visible)");
-        Assert.IsTrue(description1.Displayed, "Class Attribute page is not loaded properly (Description1 is not visible)");
-        Assert.IsTrue(description2.Displayed, "Class Attribute page is not loaded properly (Description2 is not visible)");
-        Assert.IsTrue(description3.Displayed, "Class Attribute page is not loaded properly (Description3 is not visible)");
-        Assert.IsTrue(scenarioList.Displayed, "Class Attribute page is not loaded properly (ScenarioList is not visible)");
-        Assert.IsTrue(scenarioListElement1.Displayed, "Class Attribute page is not loaded properly (ScenarioListElement1 is not visible)");
-        Assert.IsTrue(scenarioListElement2.Displayed, "Class Attribute page is not loaded properly (ScenarioListElement2 is not visible)");
-        Assert.IsTrue(playground.Displayed, "Class Attribute page is not loaded properly (Playground is not visible)");
+        Assert.IsTrue(title.Displayed, "Load Delay page is not loaded properly (Title is not visible)");
+        Assert.IsTrue(description1.Displayed, "Load Delay page is not loaded properly (Description1 is not visible)");
+        Assert.IsTrue(scenarioList.Displayed, "Load Delay page is not loaded properly (ScenarioList is not visible)");
+        Assert.IsTrue(scenarioListElement1.Displayed, "Load Delay page is not loaded properly (ScenarioListElement1 is not visible)");
+        Assert.IsTrue(scenarioListElement2.Displayed, "Load Delay page is not loaded properly (ScenarioListElement2 is not visible)");
+        Assert.IsTrue(playground.Displayed, "Load Delay page is not loaded properly (Playground is not visible)");
     }
     
     [Test]
-    public void ClassAttributePageTest1_ClickYellowButton()
+    public void LoadDelayPagePageTest1_OpenThePageAndClickTheButtonWith5SecondWait()
     {
-        _classAttributePage.YellowButtonClicker();
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
+        _loadDelayPage.ButtonClicker();
+    }
+    
+    
+    [Test]
+    public void LoadDelayPagePageTest2_OpenThePageAndClickTheButtonWith1SecondWait()
+    {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
+        bool isElementVisible = _loadDelayPage.TryFindElement(By.ClassName("btn-primary"), 1000);
+        Assert.IsFalse(isElementVisible, "The Load Delay Page loading time is bigger than 1 sec, but smaller than 5 sec.");
+    
     }
     
     [Test]
-    public void ClassAttributePageTest2_ClickGreenButton()
+    public void LoadDelayPagePageTest3_NavbarTest1_UITAPLogoTest()
     {
-        _classAttributePage.GreenButtonClicker();
-    }
-    
-    [Test]
-    public void ClassAttributePageTest3_ClickBlueButton()
-    {
-        _classAttributePage.BlueButtonClicker();
-        _classAttributePage.AlertmessageOKClicker();
-        _driver.Navigate().Refresh();
-        _classAttributePage.BlueButtonClicker();
-        _classAttributePage.AlertmessageOKClicker();
-    }
-    
-    [Test]
-    public void ClassAttributePageTest4_NavbarTest1_UITAPLogoTest()
-    {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _navbar.UITAPLogoClick();
-        
-        
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
         Assert.IsTrue(title.Displayed, "UI Test Automation Playground title is not displayed");
     }
     
     [Test]
-    public void ClassAttributePageTest5_NavbarTest2_HomeButtonTest()
+    public void LoadDelayPageTest4_NavbarTest2_HomeButtonTest()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _navbar.HomeButtonClick();
-        
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
         Assert.IsTrue(title.Displayed, "UI Test Automation Playground title is not displayed");
     }
 
     [Test]
-    public void ClassAttributePageTest6_NavbarTest3_ResourcesButtonTest()
+    public void LoadDelayPageTest5_NavbarTest3_ResourcesButtonTest()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _navbar.ResourcesButtonClick();
-        
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
+        
         Assert.IsTrue(w3SchoolsLink.Displayed, "w3schools.com link is not displayed");
     }
 
     [Test]
-    public void ClassAttributePageTest7_NavbarTest3_TogglerTestInSmallerScreen()
+    public void LoadDelayPageTest6_NavbarTest3_TogglerTestInSmallerScreen()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
         _navbar.OpenNavbarWithNavbarToggler();
@@ -120,32 +119,40 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest8_FooterTest1_GithubLink()
+    public void LoadDelayPageTest7_FooterTest1_GithubLink()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
         Assert.IsTrue(githubRepository.Displayed, "Github Repository is not loaded");
     }
     
     [Test]
-    public void ClassAttributePageTest9_FooterTest2_RapiseLink()
+    public void LoadDelayPageTest8_FooterTest2_RapiseLink()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
         Assert.IsTrue(rapiseTitle.Displayed, "Rapise product page is not loaded (Rapise - title is not visible)");
     }
     
     [Test]
-    public void ClassAttributePageTest10_FooterTest2_InflectraCorporationLink()
+    public void LoadDelayPageTest9_FooterTest2_InflectraCorporationLink()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
         Assert.IsTrue(inflectraTitle.Displayed, "Inflectra page is not loaded (Inflectra - title is not visible)");
     }
     
     [Test]
-    public void ClassAttributePageTest11_FooterTest3_ApacheLicenseLink()
+    public void LoadDelayPageTest10_FooterTest3_ApacheLicenseLink()
     {
+        _mainPage.LoadMainPage();
+        _mainPage.OpenLoadDelayPage();
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));
         Assert.IsTrue(apacheTitle.Displayed, "Apache license page is not loaded (Apache license - title is not visible)");

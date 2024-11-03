@@ -38,7 +38,7 @@ public class ResourcesPageTests
     [Test]
     public void ResourcesPageTest1_W3SchoolsLink()
     {
-        _resourcesPage.OpenW3schoolsLink();
+        _resourcesPage.OpenW3SchoolsLink();
         var logo = _wait.Until(driver => driver.FindElement(By.Id("w3-logo")));
         Assert.IsTrue(logo.Displayed, "W3schools logo is not displayed (W3schools page is not loaded).");
         
@@ -161,8 +161,8 @@ public class ResourcesPageTests
     {
         _navbar.ResourcesButtonClick();
         
-        var w3schoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
-        Assert.IsTrue(w3schoolsLink.Displayed, "w3schools.com link is not displayed");
+        var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
+        Assert.IsTrue(w3SchoolsLink.Displayed, "w3schools.com link is not displayed");
     }
 
     [Test]
