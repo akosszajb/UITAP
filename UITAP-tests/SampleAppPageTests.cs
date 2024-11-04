@@ -38,7 +38,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPage0_AllTextsAreVisible()
+    public void SampleAppPageTest0_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Sample App')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Fill in and submit the form')]")));
@@ -54,7 +54,7 @@ public class SampleAppPageTests
     [TestCase(2,2)]
     [TestCase(3,3)]
     [TestCase(4,4)]
-    public void SampleAppPage1_LoginWithValidUserNamePassword(int testDataRowIndex, int rowIndexToAssertion)
+    public void SampleAppPageTest1_LoginWithValidUserNamePassword(int testDataRowIndex, int rowIndexToAssertion)
     {
         string[] lines = File.ReadAllLines(Path.Combine(_testDataPath));
         string name = lines[rowIndexToAssertion].Split(",").ToArray()[1];
@@ -66,7 +66,7 @@ public class SampleAppPageTests
     [TestCase(6)]
     [TestCase(7)]
     [TestCase(8)]
-    public void SampleAppPage2_LoginWithInvalidValidUserNameAndOrPassword(int rowIndex)
+    public void SampleAppPageTest2_LoginWithInvalidValidUserNameAndOrPassword(int rowIndex)
     {
         _sampleAppPage.LoginWithFormFill(_testDataPath, rowIndex);
         Assert.IsTrue(_sampleAppPage.GetLoginStatus() == "Invalid username/password", "Successful login with invalid password/username!");
