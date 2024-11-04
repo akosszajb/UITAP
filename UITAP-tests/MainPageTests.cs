@@ -238,7 +238,8 @@ public class MainPageTests
     public void MainPageTest19_OverlappedElementLink()
     {
         _mainPage.OpenOverlappedElementPage();
-        var overlappedElementTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Overlapped Element')]")));
+        var overlappedElementTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Overlapped')]")));
+        
         Assert.IsTrue(overlappedElementTitle.Displayed, "Overlapped Element page is not loaded (Overlapped Element - title is not visible)");
     }
     

@@ -1,0 +1,9 @@
+Id,Username,Password,Comment
+1,exampleusername1,pwd,Valid username-password
+2,}{@&#><...,pwd,Valid username-password(punctuation marks)
+3,例子,pwd,Valid username-password(chinese)
+4,longusernamelongusernamelongusernamevlongusernamelongusernamelongusernamelongusername,pwd,Valid username-password(long)
+5,exampleusername1,wrongpassword,Invalid username-password
+6,,,Invalid username-password (empty)
+7,,pwd,Invalid username (empty username)
+8,username,,Invalid password(empty)

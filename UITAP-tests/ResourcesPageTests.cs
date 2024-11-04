@@ -116,8 +116,8 @@ public class ResourcesPageTests
     {
         _resourcesPage.OpenSTHLink();
        
-        var consentButton = _wait.Until(driver => driver.FindElement(By.XPath("//button[@class='fc-button fc-cta-consent fc-primary-button' and @role='button' and contains(., 'Consent')]")));
-        consentButton.Click();
+        // var consentButton = _wait.Until(driver => driver.FindElement(By.XPath("//button[@class='fc-button fc-cta-consent fc-primary-button' and @role='button' and contains(., 'Consent')]")));
+        // consentButton.Click();
         var title = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.softwaretestinghelp.com/']")));
         Assert.IsTrue(title.Displayed, "Title is not displayed (Software Testing Help page is not loaded).");
     }
