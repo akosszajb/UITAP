@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace UITAP_tests;
 
-public class MouseOverPagePageTests
+public class MouseOverPageTests
 {
     private IWebDriver _driver;
     private WebDriverWait _wait;
@@ -37,7 +37,7 @@ public class MouseOverPagePageTests
     }
     
     [Test]
-    public void MouseOverPagePageTest0_AllTextsAreVisible()
+    public void MouseOverPageTest0_AllTextsAreVisible()
     {
     
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Mouse Over')]")));

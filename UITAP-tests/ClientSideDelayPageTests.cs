@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace UITAP_tests;
 
-public class Client_SideDelayPageTests
+public class ClientSideDelayPageTests
 {
      private IWebDriver _driver;
     private WebDriverWait _wait;
