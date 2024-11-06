@@ -83,6 +83,7 @@ public class FileUploadPageTests
         Assert.AreEqual(_fileUploadPage.GetSuccessMessage(), "2 file(s) selected", "After successful uploads the message is not right!");
     }
     
+    // Found defect
     [TestCase("test6_20mb.pdf")]
     [TestCase("test7.jpg")]
     public void FileUploadPageTest03_UploadInvalidFiles_SingleWrongFile(string testFileName)
@@ -94,7 +95,7 @@ public class FileUploadPageTests
         Assert.IsFalse(_fileUploadPage.IsUploaded(testFileName), "This file is not supported (by label) but the upload was successful!");
     }
 
-
+    // Found defect
     [Test]
     public void FileUploadPageTest04_UploadInvalidFiles_MultipleWrongFiles()
     {

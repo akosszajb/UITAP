@@ -62,7 +62,8 @@ public class LoadDelaysTests
         _loadDelayPage.ButtonClicker();
     }
     
-    
+    // This test is for demonstration purposes only, to illustrate the behavior of delayed loading.
+    // This part of the site is working correctly, but the test "fails" intentionally to show the expected behavior for educational purposes.
     [Test]
     public void LoadDelayPageTest02_OpenThePageAndClickTheButtonWith1SecondWait()
     {

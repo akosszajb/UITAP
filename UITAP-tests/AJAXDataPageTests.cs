@@ -64,12 +64,13 @@ public class AJAXDataPageTests
         Assert.IsTrue(ajaxResultElement.Displayed, "Green result element is not loaded in 20 sec.");
     }
     
+    // This test is for demonstration purposes only, to illustrate the behavior of delayed loading.
+    // This part of the site is working correctly, but the test "fails" intentionally to show the expected behavior for educational purposes.
     [Test]
     public void AJAXDataPageTest02_ClickButtonShortWait()
     {
         _AjaxDataPage.ButtonClicker();
         var ajaxResultElement = _wait.Until(driver => driver.FindElement(By.ClassName("bg-success")));
-        
         Assert.IsTrue(ajaxResultElement.Displayed, "Green result element is not loaded in 5 sec (below 20 sec is good enough).");
     }
     

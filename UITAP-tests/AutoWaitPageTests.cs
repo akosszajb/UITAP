@@ -101,7 +101,7 @@ public class AutoWaitPageTests
             "Auto Wait page is not loaded properly (Apply buttons are not displayed by default)!");
     }
     
-    // defect
+    // Found defect
     [Test]
     public void AutoWaitPageTest04_DefaultApply3sButtonClick()
     { 
@@ -114,7 +114,7 @@ public class AutoWaitPageTests
         Assert.IsTrue(_autoWaitPageWithDefaultWait.IsTargetNonZeroSize(), "Default: After Apply3s button click, the Target is not 'non zero sized'!");
     }
     
-    // defect
+    // Found defect
     [Test]
     public void AutoWaitPageTest05_DefaultApply5sButtonClick()
     { 
@@ -127,7 +127,7 @@ public class AutoWaitPageTests
         Assert.IsTrue(_autoWaitPageWithDefaultWait.IsTargetNonZeroSize(), "Default: After Apply5s button click, the Target is not 'non zero sized'!");
     }
     
-    // defect
+    // Found defect
     [Test]
     public void AutoWaitPageTest06_DefaultApply10sButtonClick()
     { 

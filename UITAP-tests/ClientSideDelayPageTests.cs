@@ -63,6 +63,8 @@ public class ClientSideDelayPageTests
         Assert.IsTrue(clientSideElement.Displayed, "Green result element is not loaded in 20 sec.");
     }
     
+    // This test is for demonstration purposes only, to illustrate the behavior of client side delayed loading.
+    // This part of the site is working correctly, but the test "fails" intentionally to show the expected behavior for educational purposes.
     [Test]
     public void ClientSideDelayPageTest02_ClickButtonShortWait()
     {
