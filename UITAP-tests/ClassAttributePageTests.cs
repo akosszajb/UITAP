@@ -36,7 +36,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest0_AllTextsAreVisible()
+    public void ClassAttributePageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Class Attribute')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Class attribute of an element')]")));
@@ -58,19 +58,19 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest1_ClickYellowButton()
+    public void ClassAttributePageTest01_ClickYellowButton()
     {
         _classAttributePage.YellowButtonClicker();
     }
     
     [Test]
-    public void ClassAttributePageTest2_ClickGreenButton()
+    public void ClassAttributePageTest02_ClickGreenButton()
     {
         _classAttributePage.GreenButtonClicker();
     }
     
     [Test]
-    public void ClassAttributePageTest3_ClickBlueButton()
+    public void ClassAttributePageTest03_ClickBlueButton()
     {
         _classAttributePage.BlueButtonClicker();
         _classAttributePage.AlertmessageOKClicker();
@@ -80,7 +80,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest4_NavbarTest1_UITAPLogoTest()
+    public void ClassAttributePageTest04_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         
@@ -90,7 +90,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest5_NavbarTest2_HomeButtonTest()
+    public void ClassAttributePageTest05_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         
@@ -99,7 +99,7 @@ public class ClassAttributePageTests
     }
 
     [Test]
-    public void ClassAttributePageTest6_NavbarTest3_ResourcesButtonTest()
+    public void ClassAttributePageTest06_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         
@@ -108,7 +108,7 @@ public class ClassAttributePageTests
     }
 
     [Test]
-    public void ClassAttributePageTest7_NavbarTest3_TogglerTestInSmallerScreen()
+    public void ClassAttributePageTest07_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -120,7 +120,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest8_FooterTest1_GithubLink()
+    public void ClassAttributePageTest08_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -128,7 +128,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest9_FooterTest2_RapiseLink()
+    public void ClassAttributePageTest09_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -136,7 +136,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest10_FooterTest2_InflectraCorporationLink()
+    public void ClassAttributePageTest10_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -144,7 +144,7 @@ public class ClassAttributePageTests
     }
     
     [Test]
-    public void ClassAttributePageTest11_FooterTest3_ApacheLicenseLink()
+    public void ClassAttributePageTest11_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

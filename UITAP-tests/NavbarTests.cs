@@ -60,7 +60,7 @@ public class NavbarTests
     }
 
     [Test]
-    public void NavbarTest3_TogglerTestInSmallerScreen()
+    public void NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);

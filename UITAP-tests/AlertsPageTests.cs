@@ -36,7 +36,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest0_AllTextsAreVisible()
+    public void AlertsPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Alerts')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Dealing with standard alerts, ')]")));
@@ -54,7 +54,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest1_ClickAlertButtonWithAccept()
+    public void AlertsPageTest01_ClickAlertButtonWithAccept()
     {
        _alertsPage.AlertButtonClicker();
        Console.WriteLine(_alertsPage.GetAlertMsgText());
@@ -63,7 +63,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest2_ClickConfirmButtonWithAccept()
+    public void AlertsPageTest02_ClickConfirmButtonWithAccept()
     {
         _alertsPage.ConfirmButtonClicker();
         Assert.IsTrue(_alertsPage.GetAlertMsgText().Contains("Today is Friday."), "Alert message is wrong!");
@@ -73,7 +73,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest3_ClickConfirmButtonWithCancel()
+    public void AlertsPageTest03_ClickConfirmButtonWithCancel()
     {
        _alertsPage.ConfirmButtonClicker();
        Assert.IsTrue(_alertsPage.GetAlertMsgText().Contains("Today is Friday."), "Alert message is wrong!");
@@ -83,7 +83,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest3_ClickPromptButtonWithAcceptWithoutModification()
+    public void AlertsPageTest04_ClickPromptButtonWithAcceptWithoutModification()
     {
        _alertsPage.PromptButtonClicker();
        Assert.IsTrue(_alertsPage.GetAlertMsgText().Contains("Choose"), "Alert message is wrong!");
@@ -93,7 +93,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest3_ClickPromptButtonWithAcceptWithModification()
+    public void AlertsPageTest05_ClickPromptButtonWithAcceptWithModification()
     {
        _alertsPage.PromptButtonClicker();
        Assert.IsTrue(_alertsPage.GetAlertMsgText().Contains("Choose"), "Alert message is wrong!");
@@ -105,7 +105,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest3_ClickPromptButtonWithCancelWithoutModification()
+    public void AlertsPageTest06_ClickPromptButtonWithCancelWithoutModification()
     {
         _alertsPage.PromptButtonClicker();
         Assert.IsTrue(_alertsPage.GetAlertMsgText().Contains("Choose"), "Alert message is wrong!");
@@ -115,7 +115,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest3_ClickPromptButtonWithCancelWithModification()
+    public void AlertsPageTest07_ClickPromptButtonWithCancelWithModification()
     {
         _alertsPage.PromptButtonClicker();
         Assert.IsTrue(_alertsPage.GetAlertMsgText().Contains("Choose"), "Alert message is wrong!");
@@ -125,7 +125,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest4_NavbarTest1_UITAPLogoTest()
+    public void AlertsPageTest08_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         
@@ -135,7 +135,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest5_NavbarTest2_HomeButtonTest()
+    public void AlertsPageTest09_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         
@@ -144,7 +144,7 @@ public class AlertsPageTests
     }
 
     [Test]
-    public void AlertsPageTest6_NavbarTest3_ResourcesButtonTest()
+    public void AlertsPageTest10_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         
@@ -153,7 +153,7 @@ public class AlertsPageTests
     }
 
     [Test]
-    public void AlertsPageTest7_NavbarTest3_TogglerTestInSmallerScreen()
+    public void AlertsPageTest11_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -165,7 +165,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest8_FooterTest1_GithubLink()
+    public void AlertsPageTest12_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -173,7 +173,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest9_FooterTest2_RapiseLink()
+    public void AlertsPageTest13_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -181,7 +181,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest10_FooterTest2_InflectraCorporationLink()
+    public void AlertsPageTest14_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -189,7 +189,7 @@ public class AlertsPageTests
     }
     
     [Test]
-    public void AlertsPageTest11_FooterTest3_ApacheLicenseLink()
+    public void AlertsPageTest15_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

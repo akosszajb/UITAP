@@ -37,7 +37,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest0_AllTextsAreVisible()
+    public void MouseOverPageTest00_AllTextsAreVisible()
     {
     
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Mouse Over')]")));
@@ -60,19 +60,19 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest1_ClickMeCounterZeroWithoutClicking()
+    public void MouseOverPageTest01_ClickMeCounterZeroWithoutClicking()
     {
        Assert.AreEqual(0, _MouseOverPage.GetClickMeCounter(), "The Click me counter is not zero before clicking!");
     }
     
     [Test]
-    public void MouseOverPageTest2_LinkButtonCounterZeroWithoutClicking()
+    public void MouseOverPageTest02_LinkButtonCounterZeroWithoutClicking()
     {
         Assert.AreEqual(0, _MouseOverPage.GetLinkButtonCounter(), "The Link Button counter is not zero before clicking!");
     }
     
     [Test]
-    public void MouseOverPageTest3_ClickMeClicking()
+    public void MouseOverPageTest03_ClickMeClicking()
     {
         _MouseOverPage.ClickMeLinkClicker();
         _MouseOverPage.ClickMeLinkClicker();
@@ -82,7 +82,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest4_LinkButtonClicking()
+    public void MouseOverPageTest04_LinkButtonClicking()
     {
         _MouseOverPage.LinkButtonLinkClicker();
         _MouseOverPage.LinkButtonLinkClicker();
@@ -92,7 +92,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest5_ClickMeCounterAfterRefresh()
+    public void MouseOverPageTest05_ClickMeCounterAfterRefresh()
     {
         _MouseOverPage.ClickMeLinkClicker();
         _MouseOverPage.ClickMeLinkClicker();
@@ -103,7 +103,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest6_LinkButtonCounterAfterRefresh()
+    public void MouseOverPageTest06_LinkButtonCounterAfterRefresh()
     {
         _MouseOverPage.LinkButtonLinkClicker();
         _MouseOverPage.LinkButtonLinkClicker();
@@ -114,7 +114,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest7_NavbarTest1_UITAPLogoTest()
+    public void MouseOverPageTest07_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -122,7 +122,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest8_NavbarTest2_HomeButtonTest()
+    public void MouseOverPageTest08_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -130,7 +130,7 @@ public class MouseOverPageTests
     }
 
     [Test]
-    public void MouseOverPageTest9_NavbarTest3_ResourcesButtonTest()
+    public void MouseOverPageTest09_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -138,7 +138,7 @@ public class MouseOverPageTests
     }
 
     [Test]
-    public void MouseOverPageTest10_NavbarTest3_TogglerTestInSmallerScreen()
+    public void MouseOverPageTest10_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -165,7 +165,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest13_FooterTest2_InflectraCorporationLink()
+    public void MouseOverPageTest13_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -173,7 +173,7 @@ public class MouseOverPageTests
     }
     
     [Test]
-    public void MouseOverPageTest14_FooterTest3_ApacheLicenseLink()
+    public void MouseOverPageTest14_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

@@ -38,7 +38,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest0_AllTextsAreVisible()
+    public void AJAXDataPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'AJAX Data')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'An element may appaear on a page ')]")));
@@ -56,7 +56,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest1_ClickButtonLongWait()
+    public void AJAXDataPageTest01_ClickButtonLongWait()
     {
         _AjaxDataPage.ButtonClicker();
         var ajaxResultElement = _longerWait.Until(driver => driver.FindElement(By.ClassName("bg-success")));
@@ -65,7 +65,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest2_ClickButtonShortWait()
+    public void AJAXDataPageTest02_ClickButtonShortWait()
     {
         _AjaxDataPage.ButtonClicker();
         var ajaxResultElement = _wait.Until(driver => driver.FindElement(By.ClassName("bg-success")));
@@ -74,7 +74,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest3_NavbarTest1_UITAPLogoTest()
+    public void AJAXDataPageTest03_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         
@@ -84,7 +84,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest4_NavbarTest2_HomeButtonTest()
+    public void AJAXDataPageTest04_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         
@@ -93,7 +93,7 @@ public class AJAXDataPageTests
     }
 
     [Test]
-    public void AJAXDataPageTest5_NavbarTest3_ResourcesButtonTest()
+    public void AJAXDataPageTest05_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         
@@ -102,7 +102,7 @@ public class AJAXDataPageTests
     }
 
     [Test]
-    public void AJAXDataPageTest6_NavbarTest3_TogglerTestInSmallerScreen()
+    public void AJAXDataPageTest06_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -114,7 +114,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest7_FooterTest1_GithubLink()
+    public void AJAXDataPageTest07_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -122,7 +122,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest8_FooterTest2_RapiseLink()
+    public void AJAXDataPageTest08_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -130,7 +130,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest9_FooterTest2_InflectraCorporationLink()
+    public void AJAXDataPageTest09_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -138,7 +138,7 @@ public class AJAXDataPageTests
     }
     
     [Test]
-    public void AJAXDataPageTest10_FooterTest3_ApacheLicenseLink()
+    public void AJAXDataPageTest10_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

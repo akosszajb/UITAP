@@ -37,7 +37,7 @@ public class FileUploadPageTests
     }
     
     [Test]
-    public void FileUploadPageTest0_AllTextsAreVisible()
+    public void FileUploadPageTest00_AllTextsAreVisible()
     { 
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'File Upload')]")));
         var description = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Modern web applications often include file upload')]")));
@@ -64,7 +64,7 @@ public class FileUploadPageTests
     [TestCase("test3.docx")]
     [TestCase("test4.pdf")]
     [TestCase("test5.pptx")]
-    public void FileUploadPageTest1_UploadValidFiles_SingleFile(string testFileName)
+    public void FileUploadPageTest01_UploadValidFiles_SingleFile(string testFileName)
     {
         _testFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"TestData","ValidFilesToTestUpload", testFileName);
         _fileUploadPage.FileUpload(_testFilePath);
@@ -74,7 +74,7 @@ public class FileUploadPageTests
     }
    
     [Test]
-    public void FileUploadPageTest2_UploadValidFiles_MultipleFiles()
+    public void FileUploadPageTest02_UploadValidFiles_MultipleFiles()
     {
         var firstItemPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"TestData","ValidFilesToTestUpload", "test1.txt");
         var secondItemPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"TestData","ValidFilesToTestUpload", "test2.xlsx");
@@ -85,7 +85,7 @@ public class FileUploadPageTests
     
     [TestCase("test6_20mb.pdf")]
     [TestCase("test7.jpg")]
-    public void FileUploadPageTest3_UploadInvalidFiles_SingleWrongFile(string testFileName)
+    public void FileUploadPageTest03_UploadInvalidFiles_SingleWrongFile(string testFileName)
     {
         _testFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"TestData","InvalidFilesToUpload", testFileName);
         _fileUploadPage.FileUpload(_testFilePath);
@@ -96,7 +96,7 @@ public class FileUploadPageTests
 
 
     [Test]
-    public void FileUploadPageTest4_UploadInvalidFiles_MultipleWrongFiles()
+    public void FileUploadPageTest04_UploadInvalidFiles_MultipleWrongFiles()
     {
         var firstItemPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestData", "InvalidFilesToUpload",
             "test6_20mb.pdf");
@@ -109,7 +109,7 @@ public class FileUploadPageTests
     }
 
     [Test]
-    public void FileUploadPageTest5_OneUploadAndRemoveUploadedFile()
+    public void FileUploadPageTest05_OneUploadAndRemoveUploadedFile()
     {
         _testFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"TestData","ValidFilesToTestUpload", "test1.txt");
         _fileUploadPage.FileUpload(_testFilePath);
@@ -122,7 +122,7 @@ public class FileUploadPageTests
     }
 
     [Test]
-    public void FileUploadPageTest6_NavbarTest1_UITAPLogoTest()
+    public void FileUploadPageTest06_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         
@@ -132,7 +132,7 @@ public class FileUploadPageTests
     }
     
     [Test]
-    public void FileUploadPageTest7_NavbarTest2_HomeButtonTest()
+    public void FileUploadPageTest07_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         
@@ -141,7 +141,7 @@ public class FileUploadPageTests
     }
 
     [Test]
-    public void FileUploadPageTest8_NavbarTest3_ResourcesButtonTest()
+    public void FileUploadPageTest08_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         
@@ -150,7 +150,7 @@ public class FileUploadPageTests
     }
 
     [Test]
-    public void FileUploadPageTest9_NavbarTest3_TogglerTestInSmallerScreen()
+    public void FileUploadPageTest09_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -178,7 +178,7 @@ public class FileUploadPageTests
     }
     
     [Test]
-    public void FileUploadPageTest12_FooterTest2_InflectraCorporationLink()
+    public void FileUploadPageTest12_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -186,7 +186,7 @@ public class FileUploadPageTests
     }
     
     [Test]
-    public void FileUploadPageTest13_FooterTest3_ApacheLicenseLink()
+    public void FileUploadPageTest13_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

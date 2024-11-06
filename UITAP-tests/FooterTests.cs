@@ -47,7 +47,7 @@ public class FooterTests
     }
     
     [Test]
-    public void FooterTest2_InflectraCorporationLink()
+    public void FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -55,7 +55,7 @@ public class FooterTests
     }
     
     [Test]
-    public void FooterTest3_ApacheLicenseLink()
+    public void FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

@@ -36,7 +36,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest0_AllTextsAreVisible()
+    public void DisabledInputPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Disabled Input')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Sometimes elements become')]")));
@@ -54,21 +54,21 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest1_CheckInputBar()
+    public void DisabledInputPageTest01_CheckInputBar()
     {
         _disabledInputPage.FillChangeMeInputBar("exampleText");
         Assert.AreEqual(_disabledInputPage.GetChangeMeInputBarValue(), "exampleText", "Change me... input bar is not working!");
     }
     
     [Test]
-    public void DisabledInputPageTest2_CheckEnableEditButtonByOpstatus()
+    public void DisabledInputPageTest02_CheckEnableEditButtonByOpstatus()
     {
       _disabledInputPage.EnableEditButtonClicker();
       Assert.AreEqual(_disabledInputPage.GetOpStatusText(), "Input Disabled...", "Enable Edit Field button is not working!");
     }
     
     [Test]
-    public void DisabledInputPageTest3_CheckEnableEditButtonByInputBar()
+    public void DisabledInputPageTest03_CheckEnableEditButtonByInputBar()
     {
         _disabledInputPage.EnableEditButtonClicker();
         try
@@ -83,7 +83,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest4_CheckInputBarAfterDelay()
+    public void DisabledInputPageTest04_CheckInputBarAfterDelay()
     {
         _disabledInputPage.EnableEditButtonClicker();
         Thread.Sleep(5000);
@@ -92,7 +92,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest5_NavbarTest1_UITAPLogoTest()
+    public void DisabledInputPageTest05_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -100,7 +100,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest6_NavbarTest2_HomeButtonTest()
+    public void DisabledInputPageTest06_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -108,7 +108,7 @@ public class DisabledInputPageTests
     }
 
     [Test]
-    public void DisabledInputPageTest7_NavbarTest3_ResourcesButtonTest()
+    public void DisabledInputPageTest07_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -116,7 +116,7 @@ public class DisabledInputPageTests
     }
 
     [Test]
-    public void DisabledInputPageTest8_NavbarTest3_TogglerTestInSmallerScreen()
+    public void DisabledInputPageTest08_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -128,7 +128,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest9_FooterTest1_GithubLink()
+    public void DisabledInputPageTest09_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -144,7 +144,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest11_FooterTest2_InflectraCorporationLink()
+    public void DisabledInputPageTest11_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -152,7 +152,7 @@ public class DisabledInputPageTests
     }
     
     [Test]
-    public void DisabledInputPageTest12_FooterTest3_ApacheLicenseLink()
+    public void DisabledInputPageTest12_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

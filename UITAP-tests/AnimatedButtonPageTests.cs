@@ -36,7 +36,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonTest0_AllTextsAreVisible()
+    public void AnimatedButtonTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Animated Button')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Before clicking a button we')]")));
@@ -55,7 +55,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest1_ClickStartAnimationButtonWithoutMovingTargetButtonClick()
+    public void AnimatedButtonPageTest01_ClickStartAnimationButtonWithoutMovingTargetButtonClick()
     {
          _animatedButtonPage.StartAnimationButtonClicker();
          var movingButton = _wait.Until(driver => driver.FindElement(By.CssSelector(".btn.btn-primary.spin")));
@@ -67,7 +67,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest2_ClickMovingTargetButtonWithoutStartAnimationButtonClick()
+    public void AnimatedButtonPageTest02_ClickMovingTargetButtonWithoutStartAnimationButtonClick()
     {
         _animatedButtonPage.MovingTargetButtonClickerNotInAction();
         Assert.AreNotEqual(_animatedButtonPage.GetOpStatusText(), "---", "OpStatus Text is not changed after Moving Target button click!");
@@ -75,7 +75,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest3_ClickStartAnimationButtonAndThenMovingTargetButtonClick()
+    public void AnimatedButtonPageTest03_ClickStartAnimationButtonAndThenMovingTargetButtonClick()
     {
         _animatedButtonPage.StartAnimationButtonClicker();
         var movingButton = _wait.Until(driver => driver.FindElement(By.CssSelector(".btn.btn-primary.spin")));
@@ -89,7 +89,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest4_ClickMovingTargetButtonAndThenStartAnimationButtonClick()
+    public void AnimatedButtonPageTest04_ClickMovingTargetButtonAndThenStartAnimationButtonClick()
     {
         _animatedButtonPage.MovingTargetButtonClickerNotInAction();
         Assert.AreNotEqual(_animatedButtonPage.GetOpStatusText(), "---", "OpStatus Text is not changed after Moving Target button click!");
@@ -102,7 +102,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest5_NavbarTest1_UITAPLogoTest()
+    public void AnimatedButtonPageTest05_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -110,7 +110,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest6_NavbarTest2_HomeButtonTest()
+    public void AnimatedButtonPageTest06_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -118,7 +118,7 @@ public class AnimatedButtonPageTests
     }
 
     [Test]
-    public void AnimatedButtonPageTest7_NavbarTest3_ResourcesButtonTest()
+    public void AnimatedButtonPageTest07_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -126,7 +126,7 @@ public class AnimatedButtonPageTests
     }
 
     [Test]
-    public void AnimatedButtonPageTest8_NavbarTest3_TogglerTestInSmallerScreen()
+    public void AnimatedButtonPageTest08_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -138,7 +138,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest9_FooterTest1_GithubLink()
+    public void AnimatedButtonPageTest09_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -154,7 +154,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest11_FooterTest2_InflectraCorporationLink()
+    public void AnimatedButtonPageTest11_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -162,7 +162,7 @@ public class AnimatedButtonPageTests
     }
     
     [Test]
-    public void AnimatedButtonPageTest12_FooterTest3_ApacheLicenseLink()
+    public void AnimatedButtonPageTest12_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

@@ -38,7 +38,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPageTest0_AllTextsAreVisible()
+    public void SampleAppPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Sample App')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Fill in and submit the form')]")));
@@ -54,7 +54,7 @@ public class SampleAppPageTests
     [TestCase(2,2)]
     [TestCase(3,3)]
     [TestCase(4,4)]
-    public void SampleAppPageTest1_LoginWithValidUserNamePassword(int testDataRowIndex, int rowIndexToAssertion)
+    public void SampleAppPageTest01_LoginWithValidUserNamePassword(int testDataRowIndex, int rowIndexToAssertion)
     {
         string[] lines = File.ReadAllLines(Path.Combine(_testDataPath));
         string name = lines[rowIndexToAssertion].Split(",").ToArray()[1];
@@ -66,14 +66,14 @@ public class SampleAppPageTests
     [TestCase(6)]
     [TestCase(7)]
     [TestCase(8)]
-    public void SampleAppPageTest2_LoginWithInvalidValidUserNameAndOrPassword(int rowIndex)
+    public void SampleAppPageTest02_LoginWithInvalidValidUserNameAndOrPassword(int rowIndex)
     {
         _sampleAppPage.LoginWithFormFill(_testDataPath, rowIndex);
         Assert.IsTrue(_sampleAppPage.GetLoginStatus() == "Invalid username/password", "Successful login with invalid password/username!");
     }
     
     [Test]
-    public void SampleAppPageTest3_CheckLogoutButtonIsWorkingAfterSuccessfulLoginProcess()
+    public void SampleAppPageTest03_CheckLogoutButtonIsWorkingAfterSuccessfulLoginProcess()
     {
         _sampleAppPage.LoginWithFormFill(_testDataPath, 1);
         _sampleAppPage.LogOutButtonClick();
@@ -83,7 +83,7 @@ public class SampleAppPageTests
     
     
     [Test]
-    public void SampleAppPageTest4_NavbarTest1_UITAPLogoTest()
+    public void SampleAppPageTest04_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -91,7 +91,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPageTest5_NavbarTest2_HomeButtonTest()
+    public void SampleAppPageTest05_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -99,7 +99,7 @@ public class SampleAppPageTests
     }
 
     [Test]
-    public void SampleAppPageTest6_NavbarTest3_ResourcesButtonTest()
+    public void SampleAppPageTest06_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -107,7 +107,7 @@ public class SampleAppPageTests
     }
 
     [Test]
-    public void SampleAppPageTest7_NavbarTest3_TogglerTestInSmallerScreen()
+    public void SampleAppPageTest07_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -118,7 +118,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPageTest8_FooterTest1_GithubLink()
+    public void SampleAppPageTest08_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -126,7 +126,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPageTest9_FooterTest2_RapiseLink()
+    public void SampleAppPageTest09_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -134,7 +134,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPageTest10_FooterTest2_InflectraCorporationLink()
+    public void SampleAppPageTest10_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -142,7 +142,7 @@ public class SampleAppPageTests
     }
     
     [Test]
-    public void SampleAppPageTest11_FooterTest3_ApacheLicenseLink()
+    public void SampleAppPageTest11_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

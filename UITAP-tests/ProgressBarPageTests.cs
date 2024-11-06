@@ -94,7 +94,7 @@ public class ProgressBarPageTests
     }
 
     [Test]
-    public void ProgressBarPageTest5_NavbarTest3_TogglerTestInSmallerScreen()
+    public void ProgressBarPageTest5_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -122,7 +122,7 @@ public class ProgressBarPageTests
     }
     
     [Test]
-    public void ProgressBarPageTest8_FooterTest2_InflectraCorporationLink()
+    public void ProgressBarPageTest8_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -130,7 +130,7 @@ public class ProgressBarPageTests
     }
     
     [Test]
-    public void ProgressBarPageTest9_FooterTest3_ApacheLicenseLink()
+    public void ProgressBarPageTest9_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

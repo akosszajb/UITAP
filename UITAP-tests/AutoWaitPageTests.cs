@@ -700,7 +700,7 @@ public class AutoWaitPageTests
     }
 
     [Test]
-    public void AutoWaitPageTest53_NavbarTest3_TogglerTestInSmallerScreen()
+    public void AutoWaitPageTest53_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -729,7 +729,7 @@ public class AutoWaitPageTests
     }
     
     [Test]
-    public void AutoWaitPageTest56_FooterTest2_InflectraCorporationLink()
+    public void AutoWaitPageTest56_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _defaultWait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -737,7 +737,7 @@ public class AutoWaitPageTests
     }
     
     [Test]
-    public void AutoWaitPageTest57_FooterTest3_ApacheLicenseLink()
+    public void AutoWaitPageTest57_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _defaultWait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

@@ -38,7 +38,6 @@ public class DynamicTablePageTests
     [Test]
     public void DynamicTablePageTest0_AllTextsAreVisible()
     {
-        // table dipalyed kell még ide
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Dynamic Table')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Below you see a table where columns')]")));
         var scenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
@@ -71,7 +70,7 @@ public class DynamicTablePageTests
                 break;
             }
         }
-        Assert.IsTrue(cpuIndex != -1, "Nem található a 'CPU' oszlop a táblázatban.");
+        Assert.IsTrue(cpuIndex != -1, "The column 'CPU' is not found in the table.");
         var chromeRow = _wait.Until(d => d.FindElement(By.XPath("//div[@role='rowgroup']/div[@role='row'][span[text()='Chrome']]")));
         var cpuCell = chromeRow.FindElement(By.XPath($".//span[{cpuIndex}]"));
         
@@ -108,7 +107,7 @@ public class DynamicTablePageTests
     }
 
     [Test]
-    public void DynamicTablePageTest5_NavbarTest3_TogglerTestInSmallerScreen()
+    public void DynamicTablePageTest5_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -135,7 +134,7 @@ public class DynamicTablePageTests
     }
     
     [Test]
-    public void DynamicTablePageTest8_FooterTest2_InflectraCorporationLink()
+    public void DynamicTablePageTest8_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -143,7 +142,7 @@ public class DynamicTablePageTests
     }
     
     [Test]
-    public void DynamicTablePageTest9_FooterTest3_ApacheLicenseLink()
+    public void DynamicTablePageTest9_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

@@ -38,7 +38,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest0_AllTextsAreVisible()
+    public void ClientSideDelayPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Client Side Delay')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'An element may appaear on a page after heavy JavaScript')]")));
@@ -56,7 +56,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest1_ClickButtonLongWait()
+    public void ClientSideDelayPageTest01_ClickButtonLongWait()
     {
         _clientSideDelayPage.ButtonClicker();
         var clientSideElement = _longerWait.Until(driver => driver.FindElement(By.ClassName("bg-success")));
@@ -64,7 +64,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest2_ClickButtonShortWait()
+    public void ClientSideDelayPageTest02_ClickButtonShortWait()
     {
         _clientSideDelayPage.ButtonClicker();
         var clientSideElement = _wait.Until(driver => driver.FindElement(By.ClassName("bg-success")));
@@ -72,7 +72,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest3_NavbarTest1_UITAPLogoTest()
+    public void ClientSideDelayPageTest03_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -80,7 +80,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest4_NavbarTest2_HomeButtonTest()
+    public void ClientSideDelayPageTest04_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -88,7 +88,7 @@ public class ClientSideDelayPageTests
     }
 
     [Test]
-    public void ClientSideDelayPageTest5_NavbarTest3_ResourcesButtonTest()
+    public void ClientSideDelayPageTest05_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -96,7 +96,7 @@ public class ClientSideDelayPageTests
     }
 
     [Test]
-    public void ClientSideDelayPageTest6_NavbarTest3_TogglerTestInSmallerScreen()
+    public void ClientSideDelayPageTest06_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -108,7 +108,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest7_FooterTest1_GithubLink()
+    public void ClientSideDelayPageTest07_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -116,7 +116,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest8_FooterTest2_RapiseLink()
+    public void ClientSideDelayPageTest08_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -124,7 +124,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest9_FooterTest2_InflectraCorporationLink()
+    public void ClientSideDelayPageTest09_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -132,7 +132,7 @@ public class ClientSideDelayPageTests
     }
     
     [Test]
-    public void ClientSideDelayPageTest10_FooterTest3_ApacheLicenseLink()
+    public void ClientSideDelayPageTest10_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

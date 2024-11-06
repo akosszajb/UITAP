@@ -36,7 +36,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest0_AllTextsAreVisible()
+    public void ScrollbarsPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Scrollbars')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'An application may use native or custom')]")));
@@ -56,7 +56,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest1_ScrollToFindTheHiddenButtonAndClickOnIt()
+    public void ScrollbarsPageTest01_ScrollToFindTheHiddenButtonAndClickOnIt()
     {
         _scrollbarsPage.ButtonClickerWithScrolling();
         var button = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-primary")));
@@ -68,7 +68,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest2_ClickOnTheHiddenButtonWithoutScollingToIt()
+    public void ScrollbarsPageTest02_ClickOnTheHiddenButtonWithoutScollingToIt()
     {
         var button = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-primary")));
         var scrollArea = _wait.Until(driver=>driver.FindElement(By.CssSelector("div[style*='overflow-y: scroll']")));
@@ -79,7 +79,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest3_NavbarTest1_UITAPLogoTest()
+    public void ScrollbarsPageTest03_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -87,7 +87,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest4_NavbarTest2_HomeButtonTest()
+    public void ScrollbarsPageTest04_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -95,7 +95,7 @@ public class ScrollbarsPageTests
     }
 
     [Test]
-    public void ScrollbarsPageTest5_NavbarTest3_ResourcesButtonTest()
+    public void ScrollbarsPageTest05_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -103,7 +103,7 @@ public class ScrollbarsPageTests
     }
 
     [Test]
-    public void ScrollbarsPageTest6_NavbarTest3_TogglerTestInSmallerScreen()
+    public void ScrollbarsPageTest06_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -114,7 +114,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest7_FooterTest1_GithubLink()
+    public void ScrollbarsPageTest07_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -122,7 +122,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest8_FooterTest2_RapiseLink()
+    public void ScrollbarsPageTest08_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -130,7 +130,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest9_FooterTest2_InflectraCorporationLink()
+    public void ScrollbarsPageTest09_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -138,7 +138,7 @@ public class ScrollbarsPageTests
     }
     
     [Test]
-    public void ScrollbarsPageTest10_FooterTest3_ApacheLicenseLink()
+    public void ScrollbarsPageTest10_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

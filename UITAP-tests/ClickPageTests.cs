@@ -87,7 +87,7 @@ public class ClickPageTests
     }
 
     [Test]
-    public void ClickPageTest5_NavbarTest3_TogglerTestInSmallerScreen()
+    public void ClickPageTest5_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -115,7 +115,7 @@ public class ClickPageTests
     }
     
     [Test]
-    public void ClickPageTest8_FooterTest2_InflectraCorporationLink()
+    public void ClickPageTest8_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -123,7 +123,7 @@ public class ClickPageTests
     }
     
     [Test]
-    public void ClickPageTest9_FooterTest3_ApacheLicenseLink()
+    public void ClickPageTest9_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

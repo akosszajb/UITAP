@@ -36,7 +36,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest1_W3SchoolsLink()
+    public void ResourcesPageTest01_W3SchoolsLink()
     {
         _resourcesPage.OpenW3SchoolsLink();
         var logo = _wait.Until(driver => driver.FindElement(By.Id("w3-logo")));
@@ -45,7 +45,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest2_MDNLink()
+    public void ResourcesPageTest02_MDNLink()
     {
         _resourcesPage.OpenMDNLink();
         var logo = _wait.Until(driver => driver.FindElement(By.Id("mdn-docs-logo")));
@@ -53,7 +53,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest3_LearnRegexLink()
+    public void ResourcesPageTest03_LearnRegexLink()
     {
         _resourcesPage.OpenLearnRegexLink();
         var learnRegexTitle =
@@ -62,7 +62,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest4_DevhintLink()
+    public void ResourcesPageTest04_DevhintLink()
     {
         _resourcesPage.OpenDevhintsLink();
         var devHintsTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h1[contains(text(), 'Rico')]")));
@@ -70,7 +70,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest5_W3CLink()
+    public void ResourcesPageTest05_W3CLink()
     {
         _resourcesPage.OpenW3CLink();
         var W3CTitle = _wait.Until(driver => driver.FindElement(By.Id("main")));
@@ -79,7 +79,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest6_TestPyramidLink()
+    public void ResourcesPageTest06_TestPyramidLink()
     {
         _resourcesPage.OpenTestPyramidLink();
         var martinFlower = _wait.Until(driver => driver.FindElement(By.Id("banner")));
@@ -87,7 +87,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest7_FlankyTestsLink()
+    public void ResourcesPageTest07_FlankyTestsLink()
     {
         _resourcesPage.OpenFlankyTestsLink();
         var googleTestingBlogTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[@class='title']/a[@href='https://testing.googleblog.com/2017/04/where-do-our-flaky-tests-come-from.html']")));
@@ -95,7 +95,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest8_MinistryOfTestingLink()
+    public void ResourcesPageTest08_MinistryOfTestingLink()
     {
         _resourcesPage.OpenMinistryOfTestingLink();
         var welcomeTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h1[contains(text(), 'Welcome to the Ministry of Testing')]")));
@@ -103,7 +103,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest9_UTestLink()
+    public void ResourcesPageTest09_UTestLink()
     {
         _resourcesPage.OpenuTestLink();
         var uTestNavbar = _wait.Until(driver => driver.FindElement(By.ClassName("navbar-default")));
@@ -166,7 +166,7 @@ public class ResourcesPageTests
     }
 
     [Test]
-    public void ResourcesPageTest16_NavbarTest3_TogglerTestInSmallerScreen()
+    public void ResourcesPageTest16_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -194,7 +194,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest19_FooterTest2_InflectraCorporationLink()
+    public void ResourcesPageTest19_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -202,7 +202,7 @@ public class ResourcesPageTests
     }
     
     [Test]
-    public void ResourcesPageTest20_FooterTest3_ApacheLicenseLink()
+    public void ResourcesPageTest20_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

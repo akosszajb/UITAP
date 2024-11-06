@@ -96,7 +96,7 @@ public class DynamicIDPageTests
     }
 
     [Test]
-    public void DynamicIDPageTest5_NavbarTest3_TogglerTestInSmallerScreen()
+    public void DynamicIDPageTest5_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -124,7 +124,7 @@ public class DynamicIDPageTests
     }
     
     [Test]
-    public void DynamicIDPageTest8_FooterTest2_InflectraCorporationLink()
+    public void DynamicIDPageTest8_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -132,7 +132,7 @@ public class DynamicIDPageTests
     }
     
     [Test]
-    public void DynamicIDPageTest9_FooterTest3_ApacheLicenseLink()
+    public void DynamicIDPageTest9_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

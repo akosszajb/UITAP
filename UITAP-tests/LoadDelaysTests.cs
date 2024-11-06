@@ -35,7 +35,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest0_AllTextsAreVisible()
+    public void LoadDelayPageTest00_AllTextsAreVisible()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -55,7 +55,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest1_OpenThePageAndClickTheButtonWith5SecondWait()
+    public void LoadDelayPageTest01_OpenThePageAndClickTheButtonWith5SecondWait()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -64,7 +64,7 @@ public class LoadDelaysTests
     
     
     [Test]
-    public void LoadDelayPageTest2_OpenThePageAndClickTheButtonWith1SecondWait()
+    public void LoadDelayPageTest02_OpenThePageAndClickTheButtonWith1SecondWait()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -74,7 +74,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest3_NavbarTest1_UITAPLogoTest()
+    public void LoadDelayPageTest03_NavbarTest1_UITAPLogoTest()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -84,7 +84,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest4_NavbarTest2_HomeButtonTest()
+    public void LoadDelayPageTest04_NavbarTest2_HomeButtonTest()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -94,7 +94,7 @@ public class LoadDelaysTests
     }
 
     [Test]
-    public void LoadDelayPageTest5_NavbarTest3_ResourcesButtonTest()
+    public void LoadDelayPageTest05_NavbarTest3_ResourcesButtonTest()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -105,7 +105,7 @@ public class LoadDelaysTests
     }
 
     [Test]
-    public void LoadDelayPageTest6_NavbarTest3_TogglerTestInSmallerScreen()
+    public void LoadDelayPageTest06_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -119,7 +119,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest7_FooterTest1_GithubLink()
+    public void LoadDelayPageTest07_FooterTest1_GithubLink()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -129,7 +129,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest8_FooterTest2_RapiseLink()
+    public void LoadDelayPageTest08_FooterTest2_RapiseLink()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -139,7 +139,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest9_FooterTest2_InflectraCorporationLink()
+    public void LoadDelayPageTest09_FooterTest3_InflectraCorporationLink()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
@@ -149,7 +149,7 @@ public class LoadDelaysTests
     }
     
     [Test]
-    public void LoadDelayPageTest10_FooterTest3_ApacheLicenseLink()
+    public void LoadDelayPageTest10_FooterTest4_ApacheLicenseLink()
     {
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();

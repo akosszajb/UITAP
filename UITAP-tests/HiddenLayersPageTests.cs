@@ -36,7 +36,7 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest0_AllTextsAreVisible()
+    public void HiddenLayersPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Hidden Layers')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Some applications use DOM caching')]")));
@@ -54,14 +54,14 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest1_ClickOnButtonGreenAndBlue()
+    public void HiddenLayersPageTest01_ClickOnButtonGreenAndBlue()
     {
         _hiddenLayersPage.GreenButtonClicker();
         _hiddenLayersPage.BlueButtonClicker();
     }
     
     [Test]
-    public void HiddenLayersPageTest2_ClickOnGreenButtonToSeeBlueButton()
+    public void HiddenLayersPageTest02_ClickOnGreenButtonToSeeBlueButton()
     {
         _hiddenLayersPage.GreenButtonClicker();
         var blueButton = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-primary")));
@@ -71,14 +71,14 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest3_CheckBlueButtonIsAvailableBeforeGreen()
+    public void HiddenLayersPageTest03_CheckBlueButtonIsAvailableBeforeGreen()
     {
         var greenButton = _wait.Until(driver=> driver.FindElement(By.ClassName("btn-success")));
         Assert.IsTrue(greenButton.Enabled, "Before clicking on the green button, the blue button should not be enabled!");
     }
     
     [Test]
-    public void HiddenLayersPageTest4_NavbarTest1_UITAPLogoTest()
+    public void HiddenLayersPageTest04_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -86,7 +86,7 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest5_NavbarTest2_HomeButtonTest()
+    public void HiddenLayersPageTest05_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -94,7 +94,7 @@ public class HiddenLayersPageTests
     }
 
     [Test]
-    public void HiddenLayersPageTest6_NavbarTest3_ResourcesButtonTest()
+    public void HiddenLayersPageTest06_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -102,7 +102,7 @@ public class HiddenLayersPageTests
     }
 
     [Test]
-    public void HiddenLayersPageTest7_NavbarTest3_TogglerTestInSmallerScreen()
+    public void HiddenLayersPageTest07_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -114,7 +114,7 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest8_FooterTest1_GithubLink()
+    public void HiddenLayersPageTest08_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -122,7 +122,7 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest9_FooterTest2_RapiseLink()
+    public void HiddenLayersPageTest09_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -130,7 +130,7 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest10_FooterTest2_InflectraCorporationLink()
+    public void HiddenLayersPageTest10_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -138,7 +138,7 @@ public class HiddenLayersPageTests
     }
     
     [Test]
-    public void HiddenLayersPageTest11_FooterTest3_ApacheLicenseLink()
+    public void HiddenLayersPageTest11_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

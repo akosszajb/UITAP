@@ -6,7 +6,7 @@ namespace UITAP_tests;
 
 public class TextInputPageTests
 {
-     private IWebDriver _driver;
+    private IWebDriver _driver;
     private WebDriverWait _wait;
     private MainPage _mainPage;
     private Navbar _navbar;
@@ -36,7 +36,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest0_AllTextsAreVisible()
+    public void TextInputPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Text Input')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'Entering text with physical key')]")));
@@ -54,7 +54,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest1_CheckButtonNameWithoutInputBarFilling()
+    public void TextInputPageTest01_CheckButtonNameWithoutInputBarFilling()
     {
         var button = _wait.Until(driver=>driver.FindElement(By.ClassName("btn-primary")));
         string buttonText = button.Text;
@@ -64,7 +64,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest2_CheckNewButtonNameAfterFillingInputBarWithText_English()
+    public void TextInputPageTest02_CheckNewButtonNameAfterFillingInputBarWithText_English()
     {
         var button = _wait.Until(driver=>driver.FindElement(By.ClassName("btn-primary")));
         string buttonText = button.Text;
@@ -77,7 +77,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest3_CheckNewButtonNameAfterFillingInputBarWithText_PunctuationMarks()
+    public void TextInputPageTest03_CheckNewButtonNameAfterFillingInputBarWithText_PunctuationMarks()
     {
         var button = _wait.Until(driver=>driver.FindElement(By.ClassName("btn-primary")));
         string buttonText = button.Text;
@@ -90,7 +90,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest4_CheckNewButtonNameAfterFillingInputBarWithText_Chinese()
+    public void TextInputPageTest04_CheckNewButtonNameAfterFillingInputBarWithText_Chinese()
     {
         var button = _wait.Until(driver=>driver.FindElement(By.ClassName("btn-primary")));
         string buttonText = button.Text;
@@ -103,7 +103,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest5_CheckNewButtonNameAfterFillingInputBarWithText_Arabic()
+    public void TextInputPageTest05_CheckNewButtonNameAfterFillingInputBarWithText_Arabic()
     {
         var button = _wait.Until(driver=>driver.FindElement(By.ClassName("btn-primary")));
         string buttonText = button.Text;
@@ -116,7 +116,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest6_CheckNewButtonNameAfterFillingInputBarWithNumbers()
+    public void TextInputPageTest06_CheckNewButtonNameAfterFillingInputBarWithNumbers()
     {
         var button = _wait.Until(driver=>driver.FindElement(By.ClassName("btn-primary")));
         string buttonText = button.Text;
@@ -130,7 +130,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest7_NavbarTest1_UITAPLogoTest()
+    public void TextInputPageTest07_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -138,7 +138,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest8_NavbarTest2_HomeButtonTest()
+    public void TextInputPageTest08_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -146,7 +146,7 @@ public class TextInputPageTests
     }
 
     [Test]
-    public void TextInputPageTest9_NavbarTest3_ResourcesButtonTest()
+    public void TextInputPageTest09_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -154,7 +154,7 @@ public class TextInputPageTests
     }
 
     [Test]
-    public void TextInputPageTest10_NavbarTest3_TogglerTestInSmallerScreen()
+    public void TextInputPageTest10_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -182,7 +182,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest13_FooterTest2_InflectraCorporationLink()
+    public void TextInputPageTest13_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -190,7 +190,7 @@ public class TextInputPageTests
     }
     
     [Test]
-    public void TextInputPageTest14_FooterTest3_ApacheLicenseLink()
+    public void TextInputPageTest14_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

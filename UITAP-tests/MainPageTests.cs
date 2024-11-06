@@ -29,7 +29,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest0_AllDescriptionsAreVisible()
+    public void MainPageTest00_AllDescriptionsAreVisible()
     { 
         ((IJavaScriptExecutor)_driver).ExecuteScript("document.body.style.zoom='30%'");
     var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -90,7 +90,7 @@ public class MainPageTests
     }
 
     [Test]
-    public void MainPageTest1_RubiksCubePNGLink()
+    public void MainPageTest01_RubiksCubePNGLink()
     {
         _mainPage.OpenRubiksCubePNGPage();
         var pngimgPageTitle = _wait.Until(driver => driver.FindElement(By.ClassName("logo")));
@@ -98,7 +98,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest2_RubiksCubeLicenseLink()
+    public void MainPageTest02_RubiksCubeLicenseLink()
     {
         _mainPage.OpenRubiksCubeLicensePage();
         Thread.Sleep(3000);
@@ -107,7 +107,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest3_DynamicIdLink()
+    public void MainPageTest03_DynamicIdLink()
     {
         _mainPage.OpenDynamicIdPage();
         var dynamicidTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Dynamic ID')]")));
@@ -115,7 +115,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest4_ClassAttributeLink()
+    public void MainPageTest04_ClassAttributeLink()
     {
         _mainPage.OpenClassAttributePage();
         var classAttributeTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Class Attribute')]")));
@@ -123,7 +123,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest5_HiddenLayersLink()
+    public void MainPageTest05_HiddenLayersLink()
     {
         _mainPage.OpenHiddenLayersPage();
         var hiddenLayersTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Hidden Layers')]")));
@@ -131,7 +131,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest6_LoadDelayLink()
+    public void MainPageTest06_LoadDelayLink()
     {
         _mainPage.OpenLoadDelayPage();
         var loadDelaysTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Load Delays')]")));
@@ -139,7 +139,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest7_AJAXDataLink()
+    public void MainPageTest07_AJAXDataLink()
     {
         _mainPage.OpenAJAXDataPage();
         var ajaxDataTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'AJAX Data')]")));
@@ -147,7 +147,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest8_ClientSideDelayLink()
+    public void MainPageTest08_ClientSideDelayLink()
     {
         _mainPage.OpenClientSideDelayPage();
         var clientSideDelayTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Client Side Delay')]")));
@@ -155,7 +155,7 @@ public class MainPageTests
     }
     
     [Test]
-    public void MainPageTest9_ClickLink()
+    public void MainPageTest09_ClickLink()
     {
         _mainPage.OpenClickPage();
         var clickTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Click')]")));
@@ -290,8 +290,4 @@ public class MainPageTests
         var autowaitTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Auto Wait')]")));
         Assert.IsTrue(autowaitTitle.Displayed, "Auto Wait page is not loaded (Auto Wait - title is not visible)");
     }
-    
-    
-    
-    
 }

@@ -36,7 +36,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest0_AllTextsAreVisible()
+    public void VerifyTextPageTest00_AllTextsAreVisible()
     {
         var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Verify Text')]")));
         var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'In general inner text of a DOM element')]")));
@@ -52,7 +52,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest1_FindWelcome()
+    public void VerifyTextPageTest01_FindWelcome()
     {
         var welcome = _wait.Until(driver =>
             driver.FindElement(By.XPath("//span[normalize-space(.)='Welcome UserName!']")));
@@ -61,7 +61,7 @@ public class VerifyTextPageTests
     
     
     [Test]
-    public void VerifyTextPageTest3_NavbarTest1_UITAPLogoTest()
+    public void VerifyTextPageTest02_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -69,7 +69,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest4_NavbarTest2_HomeButtonTest()
+    public void VerifyTextPageTest03_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -77,7 +77,7 @@ public class VerifyTextPageTests
     }
 
     [Test]
-    public void VerifyTextPageTest5_NavbarTest3_ResourcesButtonTest()
+    public void VerifyTextPageTest04_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -85,7 +85,7 @@ public class VerifyTextPageTests
     }
 
     [Test]
-    public void VerifyTextPageTest6_NavbarTest3_TogglerTestInSmallerScreen()
+    public void VerifyTextPageTest05_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         Thread.Sleep(3000);
@@ -96,7 +96,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest7_FooterTest1_GithubLink()
+    public void VerifyTextPageTest06_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -104,7 +104,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest8_FooterTest2_RapiseLink()
+    public void VerifyTextPageTest07_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -112,7 +112,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest9_FooterTest2_InflectraCorporationLink()
+    public void VerifyTextPageTest08_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -120,7 +120,7 @@ public class VerifyTextPageTests
     }
     
     [Test]
-    public void VerifyTextPageTest10_FooterTest3_ApacheLicenseLink()
+    public void VerifyTextPageTest09_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));
