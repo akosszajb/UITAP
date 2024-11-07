@@ -101,7 +101,6 @@ public class ClientSideDelayPageTests
     public void ClientSideDelayPageTest06_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
-        Thread.Sleep(3000);
         _navbar.OpenNavbarWithNavbarToggler();
         _navbar.HomeButtonClick();
         

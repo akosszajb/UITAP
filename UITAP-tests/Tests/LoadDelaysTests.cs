@@ -111,7 +111,7 @@ public class LoadDelaysTests
         _mainPage.LoadMainPage();
         _mainPage.OpenLoadDelayPage();
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
-        Thread.Sleep(3000);
+        
         _navbar.OpenNavbarWithNavbarToggler();
         _navbar.HomeButtonClick();
         

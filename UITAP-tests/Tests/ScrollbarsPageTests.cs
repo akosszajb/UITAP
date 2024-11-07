@@ -106,7 +106,6 @@ public class ScrollbarsPageTests
     public void ScrollbarsPageTest06_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
-        Thread.Sleep(3000);
         _navbar.OpenNavbarWithNavbarToggler();
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));

@@ -57,7 +57,6 @@ public class ProgressBarPageTests
     {
         string startingResultText = _wait.Until(driver => driver.FindElement(By.Id("result"))).Text;
         _progressBarPage.StartProgressBar();
-        Thread.Sleep(3000);
         _progressBarPage.StopProgressBar();
         string endResultText = _wait.Until(driver => driver.FindElement(By.Id("result"))).Text;
         

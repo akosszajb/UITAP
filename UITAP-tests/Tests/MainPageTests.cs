@@ -101,7 +101,6 @@ public class MainPageTests
     public void MainPageTest02_RubiksCubeLicenseLink()
     {
         _mainPage.OpenRubiksCubeLicensePage();
-        Thread.Sleep(3000);
         var creativeCommonsLogo = _wait.Until(driver => driver.FindElement(By.ClassName("identity-logo")));
         Assert.IsTrue(creativeCommonsLogo.Displayed, "Creative Commons Page is not loaded (Creative Commons Logo is not visible)");
     }

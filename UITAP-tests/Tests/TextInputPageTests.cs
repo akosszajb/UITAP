@@ -157,7 +157,6 @@ public class TextInputPageTests
     public void TextInputPageTest10_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
-        Thread.Sleep(3000);
         _navbar.OpenNavbarWithNavbarToggler();
         _navbar.HomeButtonClick();
         
