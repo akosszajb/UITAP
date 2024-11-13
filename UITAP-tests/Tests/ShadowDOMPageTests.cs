@@ -1,17 +1,18 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using TextCopy;
 
 namespace UITAP_tests;
 
-public class NonBreakingSpacePageTests
+public class ShadowDOMPageTests
 {
     private IWebDriver _driver;
     private WebDriverWait _wait;
     private MainPage _mainPage;
     private Navbar _navbar;
     private Footer _footer;
-    private NonBreakingSpacePage _nonBreakingSpacePage;
+    private ShadowDOMPage _shadowDOMPage;
     
     [SetUp]
     public void Setup()
@@ -30,9 +31,10 @@ public class NonBreakingSpacePageTests
         _mainPage = new MainPage(_driver, _wait);
         _navbar = new Navbar(_driver, _wait);
         _footer = new Footer(_driver, _wait);
-        _nonBreakingSpacePage = new NonBreakingSpacePage(_driver, _wait);
+        _shadowDOMPage = new ShadowDOMPage(_driver, _wait);
         _mainPage.LoadMainPage();
-        _mainPage.OpenNonBreakingSpacePage();
+        _mainPage.OpenShadowDOMPage();
+        Thread.Sleep(5000);
     }
     
     [TearDown]
@@ -42,33 +44,56 @@ public class NonBreakingSpacePageTests
     }
     
     [Test]
-    public void NonBreakingSpacePageTest0_AllTextsAreVisible()
+    public void ShadowDOMPageTest00_AllTextsAreVisible()
     {
-    
-        var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Non-Breaking Space')]")));
-        var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'There are cases in test automation when')]")));
+        var title = _wait.Until(driver => driver.FindElement(By.XPath("//h3[contains(text(),'Shadow DOM')]")));
+        var description1 = _wait.Until(driver => driver.FindElement(By.XPath("//p[contains(text(),'This is a page with a Shadow DOM')]")));
         var scenarioList = _wait.Until(driver=> driver.FindElement(By.XPath("//h4[contains(text(),'Scenario')]")));
-        var scenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Use the following xpath')]")));
-        var scenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Notice that the XPath does not work.')]")));
+        var scenarioListElement1 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Create a test that clicks on')]")));
+        var scenarioListElement2 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Add an assertion step to your test to compare')]")));
+        var scenarioListElement3 = _wait.Until(driver => driver.FindElement(By.XPath("//li[contains(text(),'Then execute the test to make sure')]")));
         var playground = _wait.Until(driver => driver.FindElement(By.XPath("//h4[contains(text(),'Playground')]")));
-       
-        Assert.IsTrue(title.Displayed, "Non-Breaking Space page is not loaded properly (Title is not visible)");
-        Assert.IsTrue(description1.Displayed, "Non-Breaking Space page is not loaded properly (Description1 is not visible)");
-        Assert.IsTrue(scenarioList.Displayed, "Non-Breaking Space page is not loaded properly (Scenario is not visible)");
-        Assert.IsTrue(scenarioListElement1.Displayed, "Non-Breaking Space page is not loaded properly (ScenarioListElement1 is not visible)");
-        Assert.IsTrue(scenarioListElement2.Displayed, "Non-Breaking Space page is not loaded properly (ScenarioListElement2 is not visible)");
-        Assert.IsTrue(playground.Displayed, "Non-Breaking Space page is not loaded properly (Playground is not visible)");
+    
+        Assert.IsTrue(title.Displayed, "Shadow DOM page is not loaded properly (Title is not visible)");
+        Assert.IsTrue(description1.Displayed, "Shadow DOM page is not loaded properly (Description1 is not visible)");
+        Assert.IsTrue(scenarioList.Displayed, "Shadow DOM page is not loaded properly (ScenarioList is not visible)");
+        Assert.IsTrue(scenarioListElement1.Displayed, "Shadow DOM page is not loaded properly (ScenarioListElement1 is not visible)");
+        Assert.IsTrue(scenarioListElement2.Displayed, "Shadow DOM page is not loaded properly (ScenarioListElement2 is not visible)");
+        Assert.IsTrue(scenarioListElement3.Displayed, "Shadow DOM page is not loaded properly (ScenarioListElement2 is not visible)");
+        Assert.IsTrue(playground.Displayed, "Shadow DOM page is not loaded properly (Playground is not visible)");
     }
     
+   
     [Test]
-    public void NonBreakingSpacePageTest1_ClickMeCounterZeroWithoutClicking()
+    public void ShadowDOMPageTest01_GenerateGuid()
     {
-       _nonBreakingSpacePage.ButtonClick();
+        _shadowDOMPage.GenerateGuid();
+        Assert.NotNull(_shadowDOMPage.GetGeneratedGuidText(), "Guid generator button is not working!");
     }
     
+    [Test]
+    public void ShadowDOMPageTest02_GenerateGuidAndCopyToClipboard()
+    {
+        _shadowDOMPage.GenerateGuid();
+        _shadowDOMPage.CopyGeneratedGuid();
+        string generated = _shadowDOMPage.GetGeneratedGuidText();
+        string copied = ClipboardService.GetText();
+        Assert.AreEqual(generated, copied, "Error with the copy button, the clipboard text is not matching!");
+    }
     
     [Test]
-    public void NonBreakingSpacePageTest2_NavbarTest1_UITAPLogoTest()
+    public void ShadowDOMPageTest03_GenerateGuidAndCopyToClipboardThenGenerateAgain()
+    {
+        _shadowDOMPage.GenerateGuid();
+        _shadowDOMPage.CopyGeneratedGuid();
+        _shadowDOMPage.GenerateGuid();
+        string generated = _shadowDOMPage.GetGeneratedGuidText();
+        string copied = ClipboardService.GetText();
+        Assert.AreNotEqual(generated, copied, "Error with the copy button, the new guid text is matching!");
+    }
+    
+    [Test]
+    public void ShadowDOMPageTest04_NavbarTest1_UITAPLogoTest()
     {
         _navbar.UITAPLogoClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -76,7 +101,7 @@ public class NonBreakingSpacePageTests
     }
     
     [Test]
-    public void NonBreakingSpacePageTest3_NavbarTest2_HomeButtonTest()
+    public void ShadowDOMPageTest05_NavbarTest2_HomeButtonTest()
     {
         _navbar.HomeButtonClick();
         var title = _wait.Until(driver => driver.FindElement(By.Id("title")));
@@ -84,7 +109,7 @@ public class NonBreakingSpacePageTests
     }
 
     [Test]
-    public void NonBreakingSpacePageTest4_NavbarTest3_ResourcesButtonTest()
+    public void ShadowDOMPageTest06_NavbarTest3_ResourcesButtonTest()
     {
         _navbar.ResourcesButtonClick();
         var w3SchoolsLink = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='https://www.w3schools.com']")));
@@ -92,7 +117,7 @@ public class NonBreakingSpacePageTests
     }
 
     [Test]
-    public void NonBreakingSpacePageTest5_NavbarTest4_TogglerTestInSmallerScreen()
+    public void ShadowDOMPageTest07_NavbarTest4_TogglerTestInSmallerScreen()
     {
         _driver.Manage().Window.Size = new System.Drawing.Size(800, 600);
         _navbar.OpenNavbarWithNavbarToggler();
@@ -102,7 +127,7 @@ public class NonBreakingSpacePageTests
     }
     
     [Test]
-    public void NonBreakingSpacePageTest6_FooterTest1_GithubLink()
+    public void ShadowDOMPageTest08_FooterTest1_GithubLink()
     {
         _footer.OpenGithubRepoByLink();
         var githubRepository = _wait.Until(driver => driver.FindElement(By.CssSelector("a[href='/Inflectra/ui-test-automation-playground']")));
@@ -110,7 +135,7 @@ public class NonBreakingSpacePageTests
     }
     
     [Test]
-    public void NonBreakingSpacePageTest7_FooterTest2_RapiseLink()
+    public void ShadowDOMPageTest09_FooterTest2_RapiseLink()
     {
         _footer.OpenRapisePage();
         var rapiseTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Rapise')]")));
@@ -118,7 +143,7 @@ public class NonBreakingSpacePageTests
     }
     
     [Test]
-    public void NonBreakingSpacePageTest8_FooterTest3_InflectraCorporationLink()
+    public void ShadowDOMPageTest10_FooterTest3_InflectraCorporationLink()
     {
         _footer.OpenInflectraPage();
         var inflectraTitle = _wait.Until(driver => driver.FindElement(By.XPath("//h2[contains(text(),'Quality At Its Core:')]")));
@@ -126,7 +151,7 @@ public class NonBreakingSpacePageTests
     }
     
     [Test]
-    public void NonBreakingSpacePageTest9_FooterTest4_ApacheLicenseLink()
+    public void ShadowDOMPageTest11_FooterTest4_ApacheLicenseLink()
     {
         _footer.OpenApacheLicense();
         var apacheTitle = _wait.Until(driver => driver.FindElement(By.Id("apache-license-version-20")));

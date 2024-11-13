@@ -20,6 +20,12 @@ public class LoadDelaysTests
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("--disable-search-engine-choice-screen");
         options.AddArguments("--start-maximized");
+        var testName = TestContext.CurrentContext.Test.Name;
+        if (testName.Contains("ooterTest2_RapiseLink") || testName.Contains("ooterTest3_InflectraCorporationLink"))
+        {
+            options.AddUserProfilePreference("profile.managed_default_content_settings.images", 2); // Képek blokkolása
+        }
+
         _driver = new ChromeDriver(options);
         _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
         _mainPage = new MainPage(_driver, _wait);

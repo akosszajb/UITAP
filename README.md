@@ -1,12 +1,12 @@
+<a id="readme-top"></a>
 [![Stargazers][stars-shield]][stars-url]
-[![License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/akosszajb/UITAP">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="UITAP-tests/images/logo.png" alt="Logo" width="80" height="60">
   </a>
 
 <h3 align="center">UITAP-Tests - A Test Automation Project</h3>
@@ -17,7 +17,7 @@
     <a href="https://github.com/akosszajb/UITAP"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/akosszajb/UITAP/issues/new?labels=bug&template=bug-report.md">Report Bug</a>
+   <a href="https://github.com/akosszajb/UITAP/issues/new?labels=bug&template=bug-report.md">Report Bug</a>
     ·
     <a href="https://github.com/akosszajb/UITAP/issues/new?labels=enhancement&template=feature-request.md">Request Feature</a>
   </p>
@@ -55,12 +55,14 @@
 
 <div align="center">
   <a href="http://uitestingplayground.com/">
-    <img src="images/screenshot1.png" alt="utitap" width="130" height="130">
+    <img src="UITAP-tests/images/screenshot1.PNG" alt="utitap" width="930" height="500">
   </a>
 </div>
 
+
 System Under Test: UI Test Automation Playground Website
-This project focuses on testing the UI Test Automation Playground Website (http://uitestingplayground.com/) using parameterized tests with NUnit. The automation is achieved through Selenium, with tests written in C#, to ensure both functionality and user-friendliness. The tests cover a variety of scenarios to verify the website’s performance, responsiveness, and usability.
+
+This project focuses on testing the UI Test Automation Playground Website (http://uitestingplayground.com/) using Page Object Model and tests with NUnit. The project focusing on functional testing (black box testing), the automation is achieved through Selenium, with tests written in C#, to ensure both functionality and user-friendliness. The tests cover a variety of scenarios to verify the website’s responsiveness and usability.
 
 The entire website has been thoroughly tested, including all major components such as navigation bars, buttons, forms, and dynamic elements, to ensure that every interaction behaves as expected. Automated tests are designed to detect any issues early, improving both the quality and reliability of the website.
 
@@ -96,7 +98,7 @@ Before you begin, make sure you have the following tools installed on your syste
 * Node.js - for SUT.
 * npm - for SUT.
 * .NET SDK (for running and building the C# project) - Download from: https://dotnet.microsoft.com/download
-* Selenium WebDriver (used for automating browser interactions) - his can be installed via NuGet inside the project.
+* Selenium WebDriver + ChromeDriver (used for automating browser interactions) - his can be installed via NuGet inside the project.
 * NUnit (the testing framework used for this project) - This will also be installed via NuGet inside the project.
 
 Optional:
@@ -181,8 +183,6 @@ Resources I find helpful and would like to give credit to.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [stars-shield]: https://img.shields.io/github/stars/akosszajb/UITAP.svg?style=for-the-badge
 [stars-url]: https://github.com/akosszajb/UITAP/stargazers
-[license-shield]: https://img.shields.io/github/license/akosszajb/UITAP.svg?style=for-the-badge
-[license-url]: https://github.com/akosszajb/UITAP/blob/main/UITAP-tests/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/akos-szajbert-7b489126b/
 [product-screenshot]: images/screenshot1.png

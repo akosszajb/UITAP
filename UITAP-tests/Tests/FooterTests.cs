@@ -17,7 +17,16 @@ public class FooterTests
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("--disable-search-engine-choice-screen");
         options.AddArguments("--start-maximized");
+        options.AddArguments("no-sandbox");
+        var testName = TestContext.CurrentContext.Test.Name;
+        if (testName.Contains("ooterTest2_RapiseLink") || testName.Contains("ooterTest3_InflectraCorporationLink"))
+        {
+            options.AddUserProfilePreference("profile.managed_default_content_settings.images", 2); // Képek blokkolása
+        }
+       
         _driver = new ChromeDriver(options);
+        _driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(120); 
+        _driver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(120);
         _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
         _footer = new Footer(_driver, _wait);
         _mainPage = new MainPage(_driver, _wait);

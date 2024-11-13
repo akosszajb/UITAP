@@ -51,11 +51,7 @@ public class FileUploadPage
 
     public void RemoveUploadedFileByFileName(string fileName)
     {
-        // var fileToRemove = _wait.Until(driver => 
-        //     driver.FindElement(By.XPath($"//div[contains(@class, 'file-item') and .//p[text()='{fileName}']]"))
-        // );
-        
-        var deleteButton = _wait.Until(driver =>
+       var deleteButton = _wait.Until(driver =>
             driver.FindElement(By.CssSelector("#root .section .drag-drop .document-uploader.upload-box.active .file-list .file-list__container .file-item .file-actions > svg:nth-of-type(1) > path:nth-of-type(2)")));
         Actions actions = new Actions(_driver);
         actions.Click(deleteButton);

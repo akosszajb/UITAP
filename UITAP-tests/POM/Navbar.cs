@@ -30,6 +30,7 @@ public class Navbar
 
     public void HomeButtonClick()
     {
+        Thread.Sleep(2000);
         HomeButton.Click();
     }
 
@@ -40,6 +41,7 @@ public class Navbar
     
     public void OpenNavbarWithNavbarToggler()
     {
+        Thread.Sleep(1000);
         NavbarToggler.Click();
     }
 
