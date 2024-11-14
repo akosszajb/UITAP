@@ -38,7 +38,7 @@ Screenshot
 
 <div align="center">
   <a>
-    <img src="UITAP-tests/Issues/bugreport2.PNG" alt="bugreport2" width="1100" height="500">
+    <img src="./bugreport2.PNG" alt="bugreport2" width="1100" height="500">
   </a>
 </div>
 
