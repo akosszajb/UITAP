@@ -42,6 +42,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#found-defects">Found Defects</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -140,6 +141,15 @@ dotnet test
 4. View Results: Test results will be displayed in the terminal, NUnit console or in your IDE's test runner. Any failures will be logged and can be used for debugging.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- FOUND DEFECTS -->
+## Found Defects
+
+As of 2024-11-14, I discovered 3 defects in the system under test (SUT). Detailed information about each defect can be found in the [Issues folder](UITAP-tests/Issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- LICENSE -->
 ## License
