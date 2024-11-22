@@ -1,14 +1,22 @@
+---
+name: "Bug report \U0001F41E"
+about: Create a bug report
+labels: bug
+
+---
+
 ## Describe the bug
+A clear and concise description of what the bug is.
 
-### Defect number (ID)
-### Title
-### Summary
-### Test
-### Environment
 ### Steps to reproduce
-### Expected Result
-### Actual Result
-### Severity/Priority
-### Status
-### Additional context
+Steps to reproduce the behavior.
 
+### Expected behavior
+A clear and concise description of what you expected to happen.
+
+### Environment
+- OS: [e.g. Arch Linux]
+- Other details that you think may affect.
+
+### Additional context
+Add any other context about the problem here.
